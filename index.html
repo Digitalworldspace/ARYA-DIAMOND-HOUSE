@@ -227,19 +227,10 @@
       padding: 12px;
       box-shadow: var(--shadow);
     }
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      background: #d6cdbc;
-      object-fit: cover;
-      aspect-ratio: 1.2/1;
-    }
     .hero-image .img-placeholder {
-      background: #d6cdbc;
+      background: linear-gradient(145deg, #f0ebe3, #d6cdbc);
       border-radius: 12px;
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
       color: #4a3f30;
       font-weight: 500;
@@ -251,10 +242,33 @@
       gap: 12px;
       font-size: 1.2rem;
     }
-    .hero-image .img-placeholder i {
-      font-size: 4rem;
-      color: var(--gold-dark);
-      opacity: 0.6;
+    .hero-image .img-placeholder .diamond-stack {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .hero-image .img-placeholder .diamond-stack span {
+      display: inline-block;
+      font-size: 3.2rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+    .hero-image .img-placeholder .diamond-stack .white-diamond {
+      color: #f5f0ea;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    .hero-image .img-placeholder .diamond-stack .color-diamond {
+      color: #f7d96a;
+      text-shadow: 0 0 12px rgba(247, 217, 106, 0.4);
+    }
+    .hero-image .img-placeholder .diamond-stack .pink-diamond {
+      color: #f5a0b8;
+      text-shadow: 0 0 12px rgba(245, 160, 184, 0.3);
+    }
+    .hero-image .img-placeholder .diamond-stack .blue-diamond {
+      color: #7fb5d9;
+      text-shadow: 0 0 12px rgba(127, 181, 217, 0.3);
     }
 
     /* ----- TRUST BAR ----- */
@@ -325,8 +339,27 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 16px;
-      font-size: 2.6rem;
-      color: var(--gold-dark);
+      font-size: 2.8rem;
+    }
+    .diamond-card .icon-circle.white-diamond {
+      color: #c0b8ae;
+      background: #f5f2ed;
+      text-shadow: 0 0 12px rgba(200,200,200,0.3);
+    }
+    .diamond-card .icon-circle.color-diamond {
+      color: #f7d96a;
+      background: #fcf5e3;
+      text-shadow: 0 0 12px rgba(247, 217, 106, 0.3);
+    }
+    .diamond-card .icon-circle.pink-diamond {
+      color: #f5a0b8;
+      background: #fceef2;
+      text-shadow: 0 0 12px rgba(245, 160, 184, 0.2);
+    }
+    .diamond-card .icon-circle.blue-diamond {
+      color: #7fb5d9;
+      background: #eef4f9;
+      text-shadow: 0 0 12px rgba(127, 181, 217, 0.2);
     }
     .diamond-card h3 {
       font-size: 1.4rem;
@@ -386,22 +419,50 @@
       width: 24px;
     }
     .certified-image {
-      background: #dbd1c2;
+      background: linear-gradient(145deg, #dbd1c2, #cbbfb0);
       border-radius: var(--radius);
       padding: 20px;
       text-align: center;
-      min-height: 180px;
+      min-height: 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: #3a3328;
       font-weight: 500;
+      gap: 10px;
     }
-    .certified-image i {
-      font-size: 4.2rem;
-      color: var(--gold-dark);
-      opacity: 0.5;
+    .certified-image .diamond-showcase {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .certified-image .diamond-showcase span {
+      font-size: 4rem;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+    }
+    .certified-image .diamond-showcase .white-diamond {
+      color: #f5f0ea;
+      text-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+    .certified-image .diamond-showcase .color-diamond {
+      color: #f7d96a;
+      text-shadow: 0 0 15px rgba(247, 217, 106, 0.3);
+    }
+    .certified-image .diamond-showcase .pink-diamond {
+      color: #f5a0b8;
+      text-shadow: 0 0 15px rgba(245, 160, 184, 0.3);
+    }
+    .certified-image .diamond-showcase .blue-diamond {
+      color: #7fb5d9;
+      text-shadow: 0 0 15px rgba(127, 181, 217, 0.3);
+    }
+    .certified-image .label {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      opacity: 0.8;
     }
 
     /* ----- INQUIRY / CONTACT SECTION ----- */
@@ -542,6 +603,12 @@
     @media (max-width: 550px) {
       .hero-content h1 { font-size: 2.2rem; }
       .btn-gold { width: 100%; justify-content: center; }
+      .hero-image .img-placeholder .diamond-stack span {
+        font-size: 2.5rem;
+      }
+      .certified-image .diamond-showcase span {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
@@ -583,9 +650,14 @@
       </div>
       <div class="hero-image">
         <div class="img-placeholder">
-          <i class="fas fa-gem"></i>
-          <span>White & fancy colour diamonds</span>
-          <span style="font-size:0.85rem; opacity:0.7;">( certified collection )</span>
+          <div class="diamond-stack">
+            <span class="white-diamond"><i class="fas fa-gem"></i></span>
+            <span class="color-diamond"><i class="fas fa-gem"></i></span>
+            <span class="pink-diamond"><i class="fas fa-gem"></i></span>
+            <span class="blue-diamond"><i class="fas fa-gem"></i></span>
+          </div>
+          <span style="font-size:0.95rem; opacity:0.8;">White · Yellow · Pink · Blue</span>
+          <span style="font-size:0.8rem; opacity:0.6;">certified collection</span>
         </div>
       </div>
     </div>
@@ -607,32 +679,32 @@
     <p class="section-sub">White and fancy colour loose diamonds · certified & non-certified options</p>
     <div class="card-grid">
       <div class="diamond-card">
-        <div class="icon-circle"><i class="fas fa-gem"></i></div>
+        <div class="icon-circle white-diamond"><i class="fas fa-gem"></i></div>
         <h3>White loose</h3>
         <div class="price-tag">D–Z colour</div>
         <span class="badge-cert">GIA / IGI</span>
         <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Round, princess, emerald & more.</p>
       </div>
       <div class="diamond-card">
-        <div class="icon-circle"><i class="fas fa-palette"></i></div>
-        <h3>Fancy colour</h3>
-        <div class="price-tag">Yellow, Pink, Blue</div>
+        <div class="icon-circle color-diamond"><i class="fas fa-gem"></i></div>
+        <h3>Fancy Yellow</h3>
+        <div class="price-tag">vivid · intense</div>
         <span class="badge-cert">certified</span>
         <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Rare & investment-grade.</p>
       </div>
       <div class="diamond-card">
-        <div class="icon-circle"><i class="fas fa-certificate"></i></div>
-        <h3>Certified pairs</h3>
-        <div class="price-tag">matching pairs</div>
+        <div class="icon-circle pink-diamond"><i class="fas fa-gem"></i></div>
+        <h3>Pink & Blue</h3>
+        <div class="price-tag">fancy colour</div>
         <span class="badge-cert">with report</span>
-        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Perfect for earrings & sets.</p>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Collector's choice.</p>
       </div>
       <div class="diamond-card">
-        <div class="icon-circle"><i class="fas fa-weight-hanging"></i></div>
-        <h3>Melee & smalls</h3>
-        <div class="price-tag">0.01–0.20 ct</div>
-        <span class="badge-cert">colour & clarity</span>
-        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Bulk lots available.</p>
+        <div class="icon-circle blue-diamond"><i class="fas fa-gem"></i></div>
+        <h3>Certified pairs</h3>
+        <div class="price-tag">matching pairs</div>
+        <span class="badge-cert">GIA certified</span>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Perfect for earrings & sets.</p>
       </div>
     </div>
   </div>
@@ -653,14 +725,19 @@
           <a href="#inquiry" class="btn-outline-gold"><i class="fas fa-file-invoice"></i> Request certified list</a>
         </div>
         <div class="certified-image">
-          <i class="fas fa-gem"></i>
-          <p style="margin-top:12px;">Certified diamonds <br> <span style="font-size:0.9rem; opacity:0.8;">GIA · IGI · HRD</span></p>
+          <div class="diamond-showcase">
+            <span class="white-diamond"><i class="fas fa-gem"></i></span>
+            <span class="color-diamond"><i class="fas fa-gem"></i></span>
+            <span class="pink-diamond"><i class="fas fa-gem"></i></span>
+            <span class="blue-diamond"><i class="fas fa-gem"></i></span>
+          </div>
+          <div class="label">White · Yellow · Pink · Blue · certified</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- INQUIRY + CONTACT (trustable) -->
+  <!-- INQUIRY + CONTACT -->
   <div class="container" id="inquiry">
     <div class="inquiry-section">
       <div class="inquiry-grid">
@@ -677,7 +754,6 @@
         <div class="inquiry-form">
           <h3 style="font-weight:700; margin-bottom:8px;">Send inquiry</h3>
           <p style="color:#3d4e5f; font-size:0.95rem;">We'll reply via WhatsApp within minutes</p>
-          <!-- Form now redirects to WhatsApp with pre-filled message -->
           <form id="whatsappForm" action="#" method="GET">
             <div class="form-row">
               <div><label>Full name *</label><input type="text" id="waName" placeholder="e.g. Rajesh Mehta" required></div>
@@ -688,7 +764,8 @@
             <label>Diamond interest</label>
             <select id="waInterest">
               <option>White loose (certified)</option>
-              <option>Fancy colour (certified)</option>
+              <option>Fancy Yellow (certified)</option>
+              <option>Pink / Blue (certified)</option>
               <option>White loose (non-certified)</option>
               <option>Certified pairs</option>
               <option>Melee / bulk</option>
@@ -696,7 +773,6 @@
             </select>
             <label>Message / specification</label>
             <textarea id="waMessage" placeholder="Carat, colour, clarity, shape, budget..."></textarea>
-            <!-- Button triggers WhatsApp with all fields -->
             <button type="submit" class="btn-gold" style="width:100%; justify-content:center; margin-top:16px;">
               <i class="fab fa-whatsapp"></i> Send inquiry on WhatsApp
             </button>
@@ -746,14 +822,12 @@
       form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // get values
         const name = document.getElementById('waName')?.value.trim() || '';
         const email = document.getElementById('waEmail')?.value.trim() || '';
         const phone = document.getElementById('waPhone')?.value.trim() || '';
         const interest = document.getElementById('waInterest')?.value || '';
         const message = document.getElementById('waMessage')?.value.trim() || '';
 
-        // Build a structured message for WhatsApp
         let waText = 'Hello ARYA DIAMOND HOUSE, I would like to inquire about diamonds.';
         waText += '\n\n📌 *Inquiry Details:*';
         if (name) waText += `\n👤 Name: ${name}`;
@@ -763,12 +837,9 @@
         if (message) waText += `\n📝 Message: ${message}`;
         waText += '\n\n— Sent from ARYA DIAMOND HOUSE website';
 
-        // Encode for URL
         const encoded = encodeURIComponent(waText);
-        // Your WhatsApp number (international format, without +)
-        const waNumber = '916352925472';  // +91 6352925472
+        const waNumber = '916352925472';
 
-        // Redirect to WhatsApp
         window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
       });
     })();
