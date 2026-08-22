@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ARYA DIAMOND HOUSE · loose & certified diamonds</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    /* ----- RESET & VARIABLES ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --gold: #c6a15b;
+      --gold-light: #e6d2a8;
+      --gold-dark: #a6823f;
+      --deep-navy: #0b1a2b;
+      --charcoal: #1e2a3a;
+      --soft-white: #faf8f5;
+      --gray-light: #f0ede8;
+      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --transition: 0.25s ease;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--soft-white);
+      color: #1f2a36;
+      line-height: 1.5;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- BUTTONS & BADGES ----- */
+    .btn-gold {
+      background: var(--gold);
+      color: #0b1a2b;
+      font-weight: 700;
+      padding: 14px 34px;
+      border: none;
+      border-radius: 60px;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 14px rgba(198, 161, 91, 0.3);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-gold i { font-size: 1.1rem; }
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      box-shadow: 0 8px 20px rgba(166, 130, 63, 0.4);
+      transform: translateY(-2px);
+      color: white;
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold-dark);
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 60px;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: #0b1a2b;
+      border-color: var(--gold);
+    }
+    .badge-cert {
+      background: #e9e1d3;
+      color: #2b3a4b;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 40px;
+      letter-spacing: 0.4px;
+      display: inline-block;
+    }
+
+    /* ----- HEADER / NAV ----- */
+    .header {
+      background: white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.92);
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--deep-navy);
+    }
+    .logo span {
+      color: var(--gold);
+      font-weight: 300;
+    }
+    .logo small {
+      font-size: 0.7rem;
+      font-weight: 400;
+      display: block;
+      color: #5a6b7c;
+      letter-spacing: 1px;
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #2a3a4a;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold-dark);
+      border-bottom-color: var(--gold);
+    }
+    .nav-contact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-contact .whatsapp-icon {
+      background: #25d366;
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    .nav-contact .whatsapp-icon:hover {
+      transform: scale(1.08);
+      background: #1da851;
+    }
+    .mobile-menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--deep-navy);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ----- HERO SECTION ----- */
+    .hero {
+      padding: 64px 0 40px;
+      background: linear-gradient(145deg, #f8f4ec 0%, #ffffff 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: var(--deep-navy);
+    }
+    .hero-content h1 .highlight {
+      color: var(--gold);
+      border-bottom: 4px solid var(--gold-light);
+      display: inline-block;
+    }
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #3d4e5f;
+      margin: 20px 0 32px;
+      max-width: 480px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      margin: 24px 0 30px;
+    }
+    .hero-badges span {
+      background: white;
+      padding: 8px 22px;
+      border-radius: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid #e5dfd6;
+    }
+    .hero-badges i { color: var(--gold); margin-right: 8px; }
+    .hero-image {
+      background: #e9e1d3;
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      background: #d6cdbc;
+      object-fit: cover;
+      aspect-ratio: 1.2/1;
+    }
+    .hero-image .img-placeholder {
+      background: #d6cdbc;
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      color: #4a3f30;
+      font-weight: 500;
+      aspect-ratio: 1.2/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 1.2rem;
+    }
+    .hero-image .img-placeholder i {
+      font-size: 4rem;
+      color: var(--gold-dark);
+      opacity: 0.6;
+    }
+
+    /* ----- TRUST BAR ----- */
+    .trust-bar {
+      background: white;
+      padding: 28px 0;
+      border-top: 1px solid #ece6dd;
+      border-bottom: 1px solid #ece6dd;
+      margin: 8px 0 40px;
+    }
+    .trust-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 500;
+      color: #1d2a36;
+    }
+    .trust-item i {
+      font-size: 1.8rem;
+      color: var(--gold);
+      width: 40px;
+    }
+
+    /* ----- DIAMOND COLLECTIONS (cards) ----- */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--deep-navy);
+    }
+    .section-sub {
+      color: #4d5f6f;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    .diamond-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px 18px 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid #f0ebe3;
+      text-align: center;
+    }
+    .diamond-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+      border-color: var(--gold-light);
+    }
+    .diamond-card .icon-circle {
+      background: #f3efe8;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 2.6rem;
+      color: var(--gold-dark);
+    }
+    .diamond-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+    .diamond-card .price-tag {
+      font-weight: 700;
+      color: var(--gold-dark);
+      font-size: 1.2rem;
+      margin: 10px 0 6px;
+    }
+    .diamond-card .badge-cert {
+      margin: 12px 0 16px;
+    }
+
+    /* ----- CERTIFIED SECTION (standout) ----- */
+    .certified-section {
+      background: #f3efe8;
+      padding: 60px 0;
+      border-radius: var(--radius);
+      margin: 40px 0 30px;
+    }
+    .certified-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .certified-content .badge-gold {
+      background: var(--gold);
+      color: #0b1a2b;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .certified-content h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+    }
+    .certified-content ul {
+      list-style: none;
+      margin: 20px 0 28px;
+    }
+    .certified-content ul li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+    }
+    .certified-content ul li i {
+      color: var(--gold);
+      font-size: 1.2rem;
+      width: 24px;
+    }
+    .certified-image {
+      background: #dbd1c2;
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #3a3328;
+      font-weight: 500;
+    }
+    .certified-image i {
+      font-size: 4.2rem;
+      color: var(--gold-dark);
+      opacity: 0.5;
+    }
+
+    /* ----- INQUIRY / CONTACT SECTION ----- */
+    .inquiry-section {
+      background: white;
+      padding: 50px 0;
+      border-radius: var(--radius);
+      margin: 40px 0;
+      box-shadow: var(--shadow);
+    }
+    .inquiry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .inquiry-info h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+    }
+    .inquiry-info p {
+      color: #435564;
+      margin: 16px 0 24px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid #ece6dd;
+    }
+    .contact-detail i {
+      width: 28px;
+      color: var(--gold-dark);
+      font-size: 1.3rem;
+    }
+    .contact-detail strong {
+      font-weight: 600;
+      color: #1d2a36;
+    }
+    .inquiry-form {
+      background: #faf8f5;
+      padding: 32px 28px;
+      border-radius: var(--radius);
+      border: 1px solid #e8e1d6;
+    }
+    .inquiry-form label {
+      font-weight: 600;
+      display: block;
+      margin: 16px 0 4px;
+      color: #1d2a36;
+    }
+    .inquiry-form input,
+    .inquiry-form textarea,
+    .inquiry-form select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd5c9;
+      border-radius: 30px;
+      background: white;
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+    .inquiry-form input:focus,
+    .inquiry-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(198, 161, 91, 0.15);
+    }
+    .inquiry-form textarea {
+      border-radius: 20px;
+      min-height: 110px;
+      resize: vertical;
+    }
+    .form-row {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .form-row > div { flex: 1; min-width: 140px; }
+
+    /* ----- FOOTER ----- */
+    .footer {
+      background: var(--deep-navy);
+      color: #cfdce8;
+      padding: 40px 0 28px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand .logo {
+      color: white;
+      font-size: 1.8rem;
+    }
+    .footer-brand .logo span { color: var(--gold); }
+    .footer-brand p { margin: 14px 0 20px; max-width: 280px; }
+    .footer-social a {
+      background: #2b3a4b;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 8px;
+      transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--gold); color: #0b1a2b; }
+    .footer-links h4 { color: white; margin-bottom: 16px; }
+    .footer-links a { display: block; padding: 6px 0; color: #bcccdb; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid #2a3b4e;
+      padding-top: 24px;
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 900px) {
+      .hero-grid, .certified-grid, .inquiry-grid, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 { font-size: 2.6rem; }
+      .nav-links { display: none; }
+      .mobile-menu-toggle { display: block; }
+      .header .container { flex-wrap: wrap; }
+      .nav-contact { margin-left: auto; }
+    }
+    @media (max-width: 550px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      .btn-gold { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        ARYA<span>DIAMOND</span> HOUSE
+        <small>loose · certified · since 2012</small>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#diamonds">Diamonds</a>
+        <a href="#certified">Certified</a>
+        <a href="#inquiry">Inquiry</a>
+      </div>
+      <div class="nav-contact">
+        <a href="https://wa.me/916352925472" target="_blank" class="whatsapp-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+918980150550" style="font-weight:600; font-size:0.95rem;"><i class="fas fa-phone-alt" style="color:var(--gold);"></i> +91 8980150550</a>
+        <button class="mobile-menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge-cert"><i class="fas fa-gem"></i> wholesale & retail</span>
+        <h1>White & Color <br><span class="highlight">Loose Diamonds</span> <br>with Certification</h1>
+        <p>Ethically sourced, GIA/IGI certified stones. Trusted by jewellers and collectors worldwide.</p>
+        <div class="hero-badges">
+          <span><i class="fas fa-check-circle"></i> 100% natural</span>
+          <span><i class="fas fa-certificate"></i> certified</span>
+          <span><i class="fas fa-globe"></i> shipped worldwide</span>
+        </div>
+        <a href="#inquiry" class="btn-gold"><i class="fas fa-paper-plane"></i> Request a quote</a>
+      </div>
+      <div class="hero-image">
+        <div class="img-placeholder">
+          <i class="fas fa-gem"></i>
+          <span>White & fancy colour diamonds</span>
+          <span style="font-size:0.85rem; opacity:0.7;">( certified collection )</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container trust-grid">
+      <div class="trust-item"><i class="fas fa-award"></i> GIA & IGI certified</div>
+      <div class="trust-item"><i class="fas fa-hand-holding-heart"></i> conflict-free</div>
+      <div class="trust-item"><i class="fas fa-truck"></i> insured shipping</div>
+      <div class="trust-item"><i class="fas fa-star"></i> 250+ happy clients</div>
+    </div>
+  </div>
+
+  <!-- DIAMOND COLLECTIONS -->
+  <div class="container" id="diamonds">
+    <h2 class="section-title">Our diamond collections</h2>
+    <p class="section-sub">White and fancy colour loose diamonds · certified & non-certified options</p>
+    <div class="card-grid">
+      <div class="diamond-card">
+        <div class="icon-circle"><i class="fas fa-gem"></i></div>
+        <h3>White loose</h3>
+        <div class="price-tag">D–Z colour</div>
+        <span class="badge-cert">GIA / IGI</span>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Round, princess, emerald & more.</p>
+      </div>
+      <div class="diamond-card">
+        <div class="icon-circle"><i class="fas fa-palette"></i></div>
+        <h3>Fancy colour</h3>
+        <div class="price-tag">Yellow, Pink, Blue</div>
+        <span class="badge-cert">certified</span>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Rare & investment-grade.</p>
+      </div>
+      <div class="diamond-card">
+        <div class="icon-circle"><i class="fas fa-certificate"></i></div>
+        <h3>Certified pairs</h3>
+        <div class="price-tag">matching pairs</div>
+        <span class="badge-cert">with report</span>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Perfect for earrings & sets.</p>
+      </div>
+      <div class="diamond-card">
+        <div class="icon-circle"><i class="fas fa-weight-hanging"></i></div>
+        <h3>Melee & smalls</h3>
+        <div class="price-tag">0.01–0.20 ct</div>
+        <span class="badge-cert">colour & clarity</span>
+        <p style="margin-top:14px; font-size:0.9rem; color:#3d4e5f;">Bulk lots available.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFIED SECTION -->
+  <div class="container" id="certified">
+    <div class="certified-section">
+      <div class="certified-grid">
+        <div class="certified-content">
+          <div class="badge-gold"><i class="fas fa-check-circle"></i> certified diamonds</div>
+          <h2>White & Color certified <br>with full report</h2>
+          <ul>
+            <li><i class="fas fa-microscope"></i> GIA, IGI & HRD certified</li>
+            <li><i class="fas fa-ruler-combined"></i> exact measurements & proportions</li>
+            <li><i class="fas fa-file-alt"></i> digital report included</li>
+            <li><i class="fas fa-shield-alt"></i> authenticity & insurance appraisal</li>
+          </ul>
+          <a href="#inquiry" class="btn-outline-gold"><i class="fas fa-file-invoice"></i> Request certified list</a>
+        </div>
+        <div class="certified-image">
+          <i class="fas fa-gem"></i>
+          <p style="margin-top:12px;">Certified diamonds <br> <span style="font-size:0.9rem; opacity:0.8;">GIA · IGI · HRD</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INQUIRY + CONTACT (trustable) -->
+  <div class="container" id="inquiry">
+    <div class="inquiry-section">
+      <div class="inquiry-grid">
+        <div class="inquiry-info">
+          <h2>Request a quote <br><span style="color:var(--gold);">or ask our experts</span></h2>
+          <p>We respond within 2 hours. All inquiries are handled with strict confidentiality.</p>
+          <div class="contact-detail"><i class="fas fa-phone-alt"></i> <div><strong>Phone</strong><br><a href="tel:+918980150550">+91 8980150550</a></div></div>
+          <div class="contact-detail"><i class="fab fa-whatsapp"></i> <div><strong>WhatsApp</strong><br><a href="https://wa.me/916352925472" target="_blank">+91 6352925472</a></div></div>
+          <div class="contact-detail"><i class="fas fa-envelope"></i> <div><strong>Email</strong><br><a href="mailto:aryaenterprise28@gmail.com">aryaenterprise28@gmail.com</a></div></div>
+          <div style="margin-top:20px; background:#f3efe8; padding:14px 18px; border-radius:40px; display:inline-block;">
+            <i class="fas fa-lock" style="color:var(--gold);"></i> 100% private & secure
+          </div>
+        </div>
+        <div class="inquiry-form">
+          <h3 style="font-weight:700; margin-bottom:8px;">Send inquiry</h3>
+          <p style="color:#3d4e5f; font-size:0.95rem;">We'll reply with availability & price</p>
+          <form action="#" method="POST">
+            <div class="form-row">
+              <div><label>Full name *</label><input type="text" placeholder="e.g. Rajesh Mehta" required></div>
+              <div><label>Email *</label><input type="email" placeholder="you@example.com" required></div>
+            </div>
+            <label>Phone (with country code) *</label>
+            <input type="tel" placeholder="+91 8980150550" value="+91 " required>
+            <label>Diamond interest</label>
+            <select>
+              <option>White loose (certified)</option>
+              <option>Fancy colour (certified)</option>
+              <option>White loose (non-certified)</option>
+              <option>Certified pairs</option>
+              <option>Melee / bulk</option>
+              <option>Other</option>
+            </select>
+            <label>Message / specification</label>
+            <textarea placeholder="Carat, colour, clarity, shape, budget..."></textarea>
+            <button type="submit" class="btn-gold" style="width:100%; justify-content:center; margin-top:16px;"><i class="fas fa-paper-plane"></i> Send inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">ARYA<span>DIAMOND</span> HOUSE</div>
+        <p>Loose & certified diamonds since 2012. Trust, transparency & quality.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Diamonds</h4>
+        <a href="#">White loose</a>
+        <a href="#">Fancy colour</a>
+        <a href="#">Certified</a>
+        <a href="#">Melee</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+918980150550"><i class="fas fa-phone-alt"></i> +91 8980150550</a>
+        <a href="https://wa.me/916352925472" target="_blank"><i class="fab fa-whatsapp"></i> +91 6352925472</a>
+        <a href="mailto:aryaenterprise28@gmail.com"><i class="fas fa-envelope"></i> aryaenterprise28@gmail.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 ARYA DIAMOND HOUSE · All rights reserved · Made with <i class="fas fa-gem" style="color:var(--gold);"></i></span>
+    </div>
+  </footer>
+
+  <!-- tiny mobile toggle (demo) -->
+  <script>
+    document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+      const nav = document.querySelector('.nav-links');
+      if (nav) {
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.width = '100%';
+        nav.style.padding = '20px 0 10px';
+        nav.style.gap = '14px';
+      }
+    });
+  </script>
+</body>
+</html>
