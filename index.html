@@ -2,1231 +2,839 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>ARYA DIAMOND HOUSE · loose & certified diamonds</title>
-  <!-- Font & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="ARYA DIAMOND HOUSE - Premium white and color lab grown loose diamonds and certified diamonds. Enquire today.">
+
+  <meta name="keywords"
+    content="lab diamonds, loose diamonds, certified diamonds, white diamonds, color diamonds, Arya Diamond House">
+
+  <title>ARYA DIAMOND HOUSE | Lab & Certified Diamonds</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <style>
-    /* ----- RESET & VARIABLES ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    :root {
-      --gold: #c6a15b;
-      --gold-light: #e6d2a8;
-      --gold-dark: #a6823f;
-      --deep-navy: #0b1a2b;
-      --charcoal: #1e2a3a;
-      --soft-white: #faf8f5;
-      --gray-light: #f0ede8;
-      --shadow: 0 12px 30px rgba(0,0,0,0.08);
-      --radius: 18px;
-      --transition: 0.25s ease;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--soft-white);
-      color: #1f2a36;
-      line-height: 1.5;
-      -webkit-tap-highlight-color: transparent;
-    }
-    a { text-decoration: none; color: inherit; }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-    @media (min-width: 768px) {
-      .container { padding: 0 24px; }
-    }
 
-    /* ----- BUTTONS & BADGES ----- */
-    .btn-gold {
-      background: var(--gold);
-      color: #0b1a2b;
-      font-weight: 700;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 60px;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 6px 14px rgba(198, 161, 91, 0.3);
-      transition: var(--transition);
-      cursor: pointer;
-      width: 100%;
-      min-height: 54px;
-    }
-    @media (min-width: 480px) {
-      .btn-gold { width: auto; padding: 14px 34px; }
-    }
-    .btn-gold i { font-size: 1.1rem; }
-    .btn-gold:hover {
-      background: var(--gold-dark);
-      box-shadow: 0 8px 20px rgba(166, 130, 63, 0.4);
-      transform: translateY(-2px);
-      color: white;
-    }
-    .btn-gold:active {
-      transform: scale(0.97);
-    }
-    .btn-outline-gold {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold-dark);
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 60px;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      min-height: 50px;
-    }
-    @media (min-width: 480px) {
-      .btn-outline-gold { width: auto; padding: 12px 28px; }
-    }
-    .btn-outline-gold:hover {
-      background: var(--gold);
-      color: #0b1a2b;
-      border-color: var(--gold);
-    }
-    .btn-outline-gold:active {
-      transform: scale(0.97);
-    }
-    .badge-cert {
-      background: #e9e1d3;
-      color: #2b3a4b;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 40px;
-      letter-spacing: 0.4px;
-      display: inline-block;
-    }
-    @media (min-width: 768px) {
-      .badge-cert { font-size: 0.75rem; padding: 6px 16px; }
-    }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-    /* ----- HEADER / NAV ----- */
-    .header {
-      background: white;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(4px);
-      background: rgba(255,255,255,0.95);
-    }
-    .header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      color: var(--deep-navy);
-      line-height: 1.1;
-    }
-    .logo span {
-      color: var(--gold);
-      font-weight: 300;
-    }
-    .logo small {
-      font-size: 0.55rem;
-      font-weight: 400;
-      display: block;
-      color: #5a6b7c;
-      letter-spacing: 0.8px;
-      margin-top: -1px;
-    }
-    @media (min-width: 480px) {
-      .logo { font-size: 1.6rem; }
-      .logo small { font-size: 0.6rem; }
-    }
-    @media (min-width: 768px) {
-      .logo { font-size: 1.8rem; }
-      .logo small { font-size: 0.7rem; }
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      padding: 16px 0 8px;
-      gap: 12px;
-      align-items: center;
-      border-top: 1px solid #f0ebe3;
-      margin-top: 8px;
-    }
-    .nav-links.open {
-      display: flex;
-    }
-    .nav-links a {
-      color: #2a3a4a;
-      transition: var(--transition);
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 8px 0;
-      width: 100%;
-      text-align: center;
-      border-bottom: 2px solid transparent;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-dark);
-      border-bottom-color: var(--gold);
-    }
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-        flex-direction: row;
-        width: auto;
-        padding: 0;
-        gap: 28px;
-        border-top: none;
-        margin-top: 0;
-      }
-      .nav-links a {
-        width: auto;
-        font-size: 0.95rem;
-        padding-bottom: 4px;
-      }
-    }
-    .nav-contact {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-left: auto;
-    }
-    @media (min-width: 480px) {
-      .nav-contact { gap: 12px; }
-    }
-    .nav-contact .whatsapp-icon {
-      background: #25d366;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: var(--transition);
-      flex-shrink: 0;
-    }
-    @media (min-width: 480px) {
-      .nav-contact .whatsapp-icon { width: 38px; height: 38px; font-size: 1.2rem; }
-    }
-    .nav-contact .whatsapp-icon:hover {
-      transform: scale(1.08);
-      background: #1da851;
-    }
-    .nav-contact .whatsapp-icon:active {
-      transform: scale(0.92);
-    }
-    .nav-contact .phone-link {
-      font-weight: 600;
-      font-size: 0.8rem;
-      display: none;
-    }
-    @media (min-width: 480px) {
-      .nav-contact .phone-link { display: inline; font-size: 0.85rem; }
-    }
-    @media (min-width: 768px) {
-      .nav-contact .phone-link { font-size: 0.95rem; }
-    }
-    .mobile-menu-toggle {
-      display: block;
-      font-size: 1.6rem;
-      color: var(--deep-navy);
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px 8px;
-      flex-shrink: 0;
-    }
-    @media (min-width: 768px) {
-      .mobile-menu-toggle { display: none; }
-    }
-
-    /* ----- HERO SECTION ----- */
-    .hero {
-      padding: 32px 0 24px;
-      background: linear-gradient(145deg, #f8f4ec 0%, #ffffff 100%);
-    }
-    @media (min-width: 768px) {
-      .hero { padding: 64px 0 40px; }
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-    @media (min-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    }
-    .hero-content h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      color: var(--deep-navy);
-    }
-    @media (min-width: 480px) {
-      .hero-content h1 { font-size: 2.6rem; }
-    }
-    @media (min-width: 768px) {
-      .hero-content h1 { font-size: 3.4rem; }
-    }
-    .hero-content h1 .highlight {
-      color: var(--gold);
-      border-bottom: 3px solid var(--gold-light);
-      display: inline-block;
-    }
-    .hero-content p {
-      font-size: 1rem;
-      color: #3d4e5f;
-      margin: 16px 0 24px;
-      max-width: 100%;
-    }
-    @media (min-width: 768px) {
-      .hero-content p { font-size: 1.15rem; margin: 20px 0 32px; max-width: 480px; }
-    }
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-      margin: 16px 0 24px;
-    }
-    @media (min-width: 480px) {
-      .hero-badges { gap: 16px 24px; margin: 24px 0 30px; }
-    }
-    .hero-badges span {
-      background: white;
-      padding: 6px 16px;
-      border-radius: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-      font-weight: 500;
-      font-size: 0.8rem;
-      border: 1px solid #e5dfd6;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    @media (min-width: 480px) {
-      .hero-badges span { font-size: 0.9rem; padding: 8px 22px; }
-    }
-    @media (min-width: 768px) {
-      .hero-badges span { font-size: 0.95rem; }
-    }
-    .hero-badges i { color: var(--gold); }
-    .hero-image {
-      background: #e9e1d3;
-      border-radius: var(--radius);
-      padding: 10px;
-      box-shadow: var(--shadow);
-    }
-    @media (min-width: 768px) {
-      .hero-image { padding: 12px; }
-    }
-    .hero-image .img-placeholder {
-      background: linear-gradient(145deg, #f0ebe3, #d6cdbc);
-      border-radius: 12px;
-      padding: 20px 16px;
-      text-align: center;
-      color: #4a3f30;
-      font-weight: 500;
-      aspect-ratio: 1.2/1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 1rem;
-    }
-    @media (min-width: 480px) {
-      .hero-image .img-placeholder { padding: 30px 20px; font-size: 1.2rem; gap: 12px; }
-    }
-    .hero-image .img-placeholder .diamond-stack {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    @media (min-width: 480px) {
-      .hero-image .img-placeholder .diamond-stack { gap: 20px; }
-    }
-    .hero-image .img-placeholder .diamond-stack span {
-      display: inline-block;
-      font-size: 2.4rem;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-    }
-    @media (min-width: 480px) {
-      .hero-image .img-placeholder .diamond-stack span { font-size: 3rem; }
-    }
-    @media (min-width: 768px) {
-      .hero-image .img-placeholder .diamond-stack span { font-size: 3.2rem; }
-    }
-    .hero-image .img-placeholder .diamond-stack .white-diamond {
-      color: #f5f0ea;
-      text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    }
-    .hero-image .img-placeholder .diamond-stack .color-diamond {
-      color: #f7d96a;
-      text-shadow: 0 0 12px rgba(247, 217, 106, 0.4);
-    }
-    .hero-image .img-placeholder .diamond-stack .pink-diamond {
-      color: #f5a0b8;
-      text-shadow: 0 0 12px rgba(245, 160, 184, 0.3);
-    }
-    .hero-image .img-placeholder .diamond-stack .blue-diamond {
-      color: #7fb5d9;
-      text-shadow: 0 0 12px rgba(127, 181, 217, 0.3);
-    }
-
-    /* ----- TRUST BAR ----- */
-    .trust-bar {
-      background: white;
-      padding: 16px 0;
-      border-top: 1px solid #ece6dd;
-      border-bottom: 1px solid #ece6dd;
-      margin: 4px 0 24px;
-    }
-    @media (min-width: 768px) {
-      .trust-bar { padding: 28px 0; margin: 8px 0 40px; }
-    }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 16px;
-    }
-    @media (min-width: 480px) {
-      .trust-grid { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
-    }
-    @media (min-width: 768px) {
-      .trust-grid { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      color: #1d2a36;
-      font-size: 0.8rem;
-    }
-    @media (min-width: 480px) {
-      .trust-item { font-size: 0.9rem; gap: 14px; }
-    }
-    @media (min-width: 768px) {
-      .trust-item { font-size: 1rem; }
-    }
-    .trust-item i {
-      font-size: 1.4rem;
-      color: var(--gold);
-      width: 28px;
-      flex-shrink: 0;
-    }
-    @media (min-width: 480px) {
-      .trust-item i { font-size: 1.6rem; width: 32px; }
-    }
-    @media (min-width: 768px) {
-      .trust-item i { font-size: 1.8rem; width: 40px; }
-    }
-
-    /* ----- DIAMOND COLLECTIONS (cards) ----- */
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--deep-navy);
-    }
-    @media (min-width: 480px) {
-      .section-title { font-size: 2rem; }
-    }
-    @media (min-width: 768px) {
-      .section-title { font-size: 2.2rem; margin-bottom: 12px; }
-    }
-    .section-sub {
-      color: #4d5f6f;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
-    @media (min-width: 768px) {
-      .section-sub { font-size: 1.1rem; margin-bottom: 40px; }
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-    @media (min-width: 480px) {
-      .card-grid { gap: 20px; }
-    }
-    @media (min-width: 640px) {
-      .card-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-    }
-    @media (min-width: 768px) {
-      .card-grid { gap: 30px; margin-bottom: 50px; }
-    }
-    .diamond-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 18px 12px 16px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border: 1px solid #f0ebe3;
-      text-align: center;
-    }
-    @media (min-width: 480px) {
-      .diamond-card { padding: 22px 16px 20px; }
-    }
-    @media (min-width: 768px) {
-      .diamond-card { padding: 28px 18px 24px; }
-    }
-    .diamond-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.06);
-      border-color: var(--gold-light);
-    }
-    @media (min-width: 768px) {
-      .diamond-card:hover { transform: translateY(-8px); }
-    }
-    .diamond-card .icon-circle {
-      background: #f3efe8;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 12px;
-      font-size: 2rem;
-    }
-    @media (min-width: 480px) {
-      .diamond-card .icon-circle { width: 64px; height: 64px; font-size: 2.4rem; }
-    }
-    @media (min-width: 768px) {
-      .diamond-card .icon-circle { width: 76px; height: 76px; font-size: 2.6rem; margin-bottom: 16px; }
-    }
-    .diamond-card .icon-circle.white-diamond {
-      color: #c0b8ae;
-      background: #f5f2ed;
-      text-shadow: 0 0 12px rgba(200,200,200,0.3);
-    }
-    .diamond-card .icon-circle.color-diamond {
-      color: #f7d96a;
-      background: #fcf5e3;
-      text-shadow: 0 0 12px rgba(247, 217, 106, 0.3);
-    }
-    .diamond-card .icon-circle.pink-diamond {
-      color: #f5a0b8;
-      background: #fceef2;
-      text-shadow: 0 0 12px rgba(245, 160, 184, 0.2);
-    }
-    .diamond-card .icon-circle.blue-diamond {
-      color: #7fb5d9;
-      background: #eef4f9;
-      text-shadow: 0 0 12px rgba(127, 181, 217, 0.2);
-    }
-    .diamond-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-    @media (min-width: 480px) {
-      .diamond-card h3 { font-size: 1.2rem; }
-    }
-    @media (min-width: 768px) {
-      .diamond-card h3 { font-size: 1.4rem; margin-bottom: 6px; }
-    }
-    .diamond-card .price-tag {
-      font-weight: 700;
-      color: var(--gold-dark);
-      font-size: 1rem;
-      margin: 6px 0 4px;
-    }
-    @media (min-width: 768px) {
-      .diamond-card .price-tag { font-size: 1.2rem; margin: 10px 0 6px; }
-    }
-    .diamond-card .badge-cert {
-      margin: 8px 0 10px;
-    }
-    @media (min-width: 768px) {
-      .diamond-card .badge-cert { margin: 12px 0 16px; }
-    }
-    .diamond-card p {
-      font-size: 0.8rem;
-      color: #3d4e5f;
-    }
-    @media (min-width: 768px) {
-      .diamond-card p { font-size: 0.9rem; }
-    }
-
-    /* ----- CERTIFIED SECTION (standout) ----- */
-    .certified-section {
-      background: #f3efe8;
-      padding: 32px 16px;
-      border-radius: var(--radius);
-      margin: 24px 0 20px;
-    }
-    @media (min-width: 480px) {
-      .certified-section { padding: 40px 24px; }
-    }
-    @media (min-width: 768px) {
-      .certified-section { padding: 60px 40px; margin: 40px 0 30px; }
-    }
-    .certified-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-    @media (min-width: 768px) {
-      .certified-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    }
-    .certified-content .badge-gold {
-      background: var(--gold);
-      color: #0b1a2b;
-      padding: 4px 16px;
-      border-radius: 40px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 8px;
-      font-size: 0.8rem;
-    }
-    @media (min-width: 768px) {
-      .certified-content .badge-gold { padding: 6px 20px; font-size: 0.9rem; margin-bottom: 10px; }
-    }
-    .certified-content h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-    }
-    @media (min-width: 480px) {
-      .certified-content h2 { font-size: 2rem; }
-    }
-    @media (min-width: 768px) {
-      .certified-content h2 { font-size: 2.2rem; }
-    }
-    .certified-content ul {
-      list-style: none;
-      margin: 16px 0 20px;
-    }
-    @media (min-width: 768px) {
-      .certified-content ul { margin: 20px 0 28px; }
-    }
-    .certified-content ul li {
-      padding: 6px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-    }
-    @media (min-width: 768px) {
-      .certified-content ul li { padding: 8px 0; gap: 12px; font-size: 1rem; }
-    }
-    .certified-content ul li i {
-      color: var(--gold);
-      font-size: 1rem;
-      width: 20px;
-      flex-shrink: 0;
-    }
-    @media (min-width: 768px) {
-      .certified-content ul li i { font-size: 1.2rem; width: 24px; }
-    }
-    .certified-image {
-      background: linear-gradient(145deg, #dbd1c2, #cbbfb0);
-      border-radius: var(--radius);
-      padding: 16px;
-      text-align: center;
-      min-height: 160px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #3a3328;
-      font-weight: 500;
-      gap: 8px;
-    }
-    @media (min-width: 480px) {
-      .certified-image { padding: 20px; min-height: 180px; gap: 10px; }
-    }
-    @media (min-width: 768px) {
-      .certified-image { min-height: 200px; padding: 20px; }
-    }
-    .certified-image .diamond-showcase {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    @media (min-width: 480px) {
-      .certified-image .diamond-showcase { gap: 20px; }
-    }
-    @media (min-width: 768px) {
-      .certified-image .diamond-showcase { gap: 25px; }
-    }
-    .certified-image .diamond-showcase span {
-      font-size: 3rem;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
-    }
-    @media (min-width: 480px) {
-      .certified-image .diamond-showcase span { font-size: 3.5rem; }
-    }
-    @media (min-width: 768px) {
-      .certified-image .diamond-showcase span { font-size: 4rem; }
-    }
-    .certified-image .diamond-showcase .white-diamond {
-      color: #f5f0ea;
-      text-shadow: 0 0 15px rgba(255,255,255,0.4);
-    }
-    .certified-image .diamond-showcase .color-diamond {
-      color: #f7d96a;
-      text-shadow: 0 0 15px rgba(247, 217, 106, 0.3);
-    }
-    .certified-image .diamond-showcase .pink-diamond {
-      color: #f5a0b8;
-      text-shadow: 0 0 15px rgba(245, 160, 184, 0.3);
-    }
-    .certified-image .diamond-showcase .blue-diamond {
-      color: #7fb5d9;
-      text-shadow: 0 0 15px rgba(127, 181, 217, 0.3);
-    }
-    .certified-image .label {
-      margin-top: 6px;
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-    @media (min-width: 768px) {
-      .certified-image .label { font-size: 0.95rem; margin-top: 8px; }
-    }
-
-    /* ----- INQUIRY / CONTACT SECTION ----- */
-    .inquiry-section {
-      background: white;
-      padding: 28px 16px;
-      border-radius: var(--radius);
-      margin: 24px 0;
-      box-shadow: var(--shadow);
-    }
-    @media (min-width: 480px) {
-      .inquiry-section { padding: 32px 24px; }
-    }
-    @media (min-width: 768px) {
-      .inquiry-section { padding: 50px 40px; margin: 40px 0; }
-    }
-    .inquiry-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-    @media (min-width: 768px) {
-      .inquiry-grid { grid-template-columns: 1fr 1.2fr; gap: 40px; }
-    }
-    .inquiry-info h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-    }
-    @media (min-width: 480px) {
-      .inquiry-info h2 { font-size: 2rem; }
-    }
-    @media (min-width: 768px) {
-      .inquiry-info h2 { font-size: 2.1rem; }
-    }
-    .inquiry-info p {
-      color: #435564;
-      margin: 12px 0 18px;
-      font-size: 0.95rem;
-    }
-    @media (min-width: 768px) {
-      .inquiry-info p { margin: 16px 0 24px; font-size: 1rem; }
-    }
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #ece6dd;
-      font-size: 0.9rem;
-    }
-    @media (min-width: 768px) {
-      .contact-detail { gap: 16px; padding: 12px 0; font-size: 1rem; }
-    }
-    .contact-detail i {
-      width: 24px;
-      color: var(--gold-dark);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    @media (min-width: 768px) {
-      .contact-detail i { width: 28px; font-size: 1.3rem; }
-    }
-    .contact-detail strong {
-      font-weight: 600;
-      color: #1d2a36;
-    }
-    .contact-detail a {
-      word-break: break-all;
-    }
-    .inquiry-form {
-      background: #faf8f5;
-      padding: 20px 16px;
-      border-radius: var(--radius);
-      border: 1px solid #e8e1d6;
-    }
-    @media (min-width: 480px) {
-      .inquiry-form { padding: 24px 20px; }
-    }
-    @media (min-width: 768px) {
-      .inquiry-form { padding: 32px 28px; }
-    }
-    .inquiry-form h3 {
-      font-weight: 700;
-      margin-bottom: 4px;
-      font-size: 1.2rem;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form h3 { font-size: 1.4rem; margin-bottom: 8px; }
-    }
-    .inquiry-form .form-sub {
-      color: #3d4e5f;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form .form-sub { font-size: 0.95rem; margin-bottom: 16px; }
-    }
-    .inquiry-form label {
-      font-weight: 600;
-      display: block;
-      margin: 12px 0 4px;
-      color: #1d2a36;
-      font-size: 0.9rem;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form label { margin: 16px 0 4px; font-size: 1rem; }
-    }
-    .inquiry-form input,
-    .inquiry-form textarea,
-    .inquiry-form select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #ddd5c9;
-      border-radius: 30px;
-      background: white;
-      font-family: 'Inter', sans-serif;
-      transition: var(--transition);
-      font-size: 0.9rem;
-      -webkit-appearance: none;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form input,
-      .inquiry-form textarea,
-      .inquiry-form select { padding: 14px 16px; font-size: 0.95rem; }
-    }
-    .inquiry-form input:focus,
-    .inquiry-form textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 4px rgba(198, 161, 91, 0.15);
-    }
-    .inquiry-form textarea {
-      border-radius: 20px;
-      min-height: 90px;
-      resize: vertical;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form textarea { min-height: 110px; }
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    @media (min-width: 480px) {
-      .form-row { grid-template-columns: 1fr 1fr; gap: 14px; }
-    }
-    @media (min-width: 768px) {
-      .form-row { gap: 18px; }
-    }
-    .inquiry-form .btn-gold {
-      margin-top: 12px;
-    }
-    @media (min-width: 768px) {
-      .inquiry-form .btn-gold { margin-top: 16px; }
-    }
-
-    /* ----- FOOTER ----- */
-    .footer {
-      background: var(--deep-navy);
-      color: #cfdce8;
-      padding: 28px 0 20px;
-      border-radius: var(--radius) var(--radius) 0 0;
-      margin-top: 24px;
-    }
-    @media (min-width: 768px) {
-      .footer { padding: 40px 0 28px; margin-top: 40px; }
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    @media (min-width: 480px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (min-width: 768px) {
-      .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-    }
-    .footer-brand .logo {
-      color: white;
-      font-size: 1.4rem;
-    }
-    @media (min-width: 768px) {
-      .footer-brand .logo { font-size: 1.8rem; }
-    }
-    .footer-brand .logo span { color: var(--gold); }
-    .footer-brand p {
-      margin: 10px 0 16px;
-      max-width: 100%;
-      font-size: 0.9rem;
-    }
-    @media (min-width: 768px) {
-      .footer-brand p { margin: 14px 0 20px; max-width: 280px; font-size: 1rem; }
-    }
-    .footer-social a {
-      background: #2b3a4b;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      margin-right: 6px;
-      transition: var(--transition);
-      font-size: 0.9rem;
-    }
-    @media (min-width: 768px) {
-      .footer-social a { width: 44px; height: 44px; margin-right: 8px; font-size: 1rem; }
-    }
-    .footer-social a:hover { background: var(--gold); color: #0b1a2b; }
-    .footer-social a:active { transform: scale(0.92); }
-    .footer-links h4 {
-      color: white;
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
-    @media (min-width: 768px) {
-      .footer-links h4 { margin-bottom: 16px; font-size: 1.1rem; }
-    }
-    .footer-links a {
-      display: block;
-      padding: 4px 0;
-      color: #bcccdb;
-      font-size: 0.85rem;
-    }
-    @media (min-width: 768px) {
-      .footer-links a { padding: 6px 0; font-size: 0.95rem; }
-    }
-    .footer-links a:hover { color: var(--gold-light); }
-    .footer-bottom {
-      border-top: 1px solid #2a3b4e;
-      padding-top: 16px;
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.75rem;
-    }
-    @media (min-width: 768px) {
-      .footer-bottom { padding-top: 24px; margin-top: 28px; font-size: 0.9rem; }
-    }
-
-    /* ----- Utility ----- */
-    .text-center { text-align: center; }
-    .mt-8 { margin-top: 8px; }
-    @media (min-width: 768px) { .mt-8 { margin-top: 0; } }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        ARYA<span>DIAMOND</span> HOUSE
-        <small>loose · certified · since 2019</small>
-      </div>
-      <div class="nav-contact">
-        <a href="https://wa.me/916352925472" target="_blank" class="whatsapp-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+918980150550" class="phone-link" style="font-weight:600;"><i class="fas fa-phone-alt" style="color:var(--gold);"></i> +91 8980150550</a>
-        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="#" class="active">Home</a>
-        <a href="#diamonds">Diamonds</a>
-        <a href="#certified">Certified</a>
-        <a href="#inquiry">Inquiry</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="badge-cert"><i class="fas fa-gem"></i> wholesale & retail</span>
-        <h1>White & Color <br><span class="highlight">Loose Diamonds</span> <br>with Certification</h1>
-        <p>Ethically sourced, GIA/IGI certified stones. Trusted by jewellers and collectors worldwide.</p>
-        <div class="hero-badges">
-          <span><i class="fas fa-check-circle"></i> 100% natural</span>
-          <span><i class="fas fa-certificate"></i> certified</span>
-          <span><i class="fas fa-globe"></i> shipped worldwide</span>
-        </div>
-        <a href="#inquiry" class="btn-gold"><i class="fas fa-paper-plane"></i> Request a quote</a>
-      </div>
-      <div class="hero-image">
-        <div class="img-placeholder">
-          <div class="diamond-stack">
-            <span class="white-diamond"><i class="fas fa-gem"></i></span>
-            <span class="color-diamond"><i class="fas fa-gem"></i></span>
-            <span class="pink-diamond"><i class="fas fa-gem"></i></span>
-            <span class="blue-diamond"><i class="fas fa-gem"></i></span>
-          </div>
-          <span style="font-size:0.8rem; opacity:0.8;">White · Yellow · Pink · Blue</span>
-          <span style="font-size:0.7rem; opacity:0.6;">certified collection</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- TOP BAR -->
+<div class="topbar">
+  LAB DIAMONDS • WHITE & COLOR DIAMONDS • LOOSE & CERTIFIED
+</div>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="container trust-grid">
-      <div class="trust-item"><i class="fas fa-award"></i> GIA & IGI</div>
-      <div class="trust-item"><i class="fas fa-hand-holding-heart"></i> conflict-free</div>
-      <div class="trust-item"><i class="fas fa-truck"></i> insured shipping</div>
-      <div class="trust-item"><i class="fas fa-star"></i> 250+ clients</div>
+
+<!-- HEADER -->
+<header class="header">
+
+  <a href="#home" class="brand">
+
+    <span class="brand-mark">A</span>
+
+    <span class="brand-text">
+      <strong>ARYA</strong>
+      <small>DIAMOND HOUSE</small>
+    </span>
+
+  </a>
+
+
+  <button class="menu-toggle" aria-label="Open Menu">
+    ☰
+  </button>
+
+
+  <nav class="nav">
+
+    <a href="#home">Home</a>
+    <a href="#diamonds">Diamonds</a>
+    <a href="#certification">Certification</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+
+  <a href="#contact" class="header-cta">
+    MAKE AN ENQUIRY
+  </a>
+
+</header>
+
+
+
+<main id="home">
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <span class="eyebrow">
+      LAB DIAMOND SPECIALISTS
+    </span>
+
+    <h1>
+      Exceptional Diamonds.
+      <br>
+      <em>Confident Choices.</em>
+    </h1>
+
+    <p>
+      Discover premium white and color loose diamonds,
+      along with certified diamonds selected according
+      to your requirements.
+    </p>
+
+
+    <div class="hero-actions">
+
+      <a href="#contact" class="btn btn-primary">
+        Enquire for Diamonds →
+      </a>
+
+      <a
+        href="https://wa.me/916352925472?text=Hello%20ARYA%20DIAMOND%20HOUSE%2C%20I%20am%20interested%20in%20diamonds."
+        target="_blank"
+        class="btn btn-light">
+
+        WhatsApp Us
+
+      </a>
+
     </div>
+
+
+    <div class="trust-row">
+
+      <span>✓ Loose Diamonds</span>
+      <span>✓ Certified Diamonds</span>
+      <span>✓ White & Color</span>
+
+    </div>
+
   </div>
 
-  <!-- DIAMOND COLLECTIONS -->
-  <div class="container" id="diamonds">
-    <h2 class="section-title">Our diamond collections</h2>
-    <p class="section-sub">White and fancy colour loose diamonds · certified & non-certified options</p>
-    <div class="card-grid">
-      <div class="diamond-card">
-        <div class="icon-circle white-diamond"><i class="fas fa-gem"></i></div>
-        <h3>White loose</h3>
-        <div class="price-tag">D–Z colour</div>
-        <span class="badge-cert">GIA / IGI</span>
-        <p>Round, princess, emerald & more.</p>
-      </div>
-      <div class="diamond-card">
-        <div class="icon-circle color-diamond"><i class="fas fa-gem"></i></div>
-        <h3>Fancy Yellow</h3>
-        <div class="price-tag">vivid · intense</div>
-        <span class="badge-cert">certified</span>
-        <p>Rare & investment-grade.</p>
-      </div>
-      <div class="diamond-card">
-        <div class="icon-circle pink-diamond"><i class="fas fa-gem"></i></div>
-        <h3>Pink & Blue</h3>
-        <div class="price-tag">fancy colour</div>
-        <span class="badge-cert">with report</span>
-        <p>Collector's choice.</p>
-      </div>
-      <div class="diamond-card">
-        <div class="icon-circle blue-diamond"><i class="fas fa-gem"></i></div>
-        <h3>Certified pairs</h3>
-        <div class="price-tag">matching pairs</div>
-        <span class="badge-cert">GIA certified</span>
-        <p>Perfect for earrings & sets.</p>
-      </div>
+
+  <div class="hero-visual">
+
+    <div class="diamond-glow"></div>
+
+    <div class="hero-diamond">
+      ◆
     </div>
+
+    <div class="floating-card">
+
+      <span class="mini-icon">✦</span>
+
+      <div>
+        <strong>Diamond Selection</strong>
+        <small>Quality-focused sourcing</small>
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- CERTIFIED SECTION -->
-  <div class="container" id="certified">
-    <div class="certified-section">
-      <div class="certified-grid">
-        <div class="certified-content">
-          <div class="badge-gold"><i class="fas fa-check-circle"></i> certified diamonds</div>
-          <h2>White & Color certified <br>with full report</h2>
-          <ul>
-            <li><i class="fas fa-microscope"></i> GIA, IGI & HRD certified</li>
-            <li><i class="fas fa-ruler-combined"></i> exact measurements & proportions</li>
-            <li><i class="fas fa-file-alt"></i> digital report included</li>
-            <li><i class="fas fa-shield-alt"></i> authenticity & insurance appraisal</li>
-          </ul>
-          <a href="#inquiry" class="btn-outline-gold"><i class="fas fa-file-invoice"></i> Request certified list</a>
-        </div>
-        <div class="certified-image">
-          <div class="diamond-showcase">
-            <span class="white-diamond"><i class="fas fa-gem"></i></span>
-            <span class="color-diamond"><i class="fas fa-gem"></i></span>
-            <span class="pink-diamond"><i class="fas fa-gem"></i></span>
-            <span class="blue-diamond"><i class="fas fa-gem"></i></span>
-          </div>
-          <div class="label">White · Yellow · Pink · Blue · certified</div>
-        </div>
-      </div>
-    </div>
+</section>
+
+
+
+<!-- TRUST STRIP -->
+<section class="proof-strip">
+
+  <div>
+    <strong>01</strong>
+    <span>Quality-focused selection</span>
   </div>
 
-  <!-- INQUIRY + CONTACT -->
-  <div class="container" id="inquiry">
-    <div class="inquiry-section">
-      <div class="inquiry-grid">
-        <div class="inquiry-info">
-          <h2>Request a quote <br><span style="color:var(--gold);">or ask our experts</span></h2>
-          <p>We respond within 2 hours. All inquiries are handled with strict confidentiality.</p>
-          <div class="contact-detail"><i class="fas fa-phone-alt"></i> <div><strong>Phone</strong><br><a href="tel:+918980150550">+91 8980150550</a></div></div>
-          <div class="contact-detail"><i class="fab fa-whatsapp"></i> <div><strong>WhatsApp</strong><br><a href="https://wa.me/916352925472" target="_blank">+91 6352925472</a></div></div>
-          <div class="contact-detail"><i class="fas fa-envelope"></i> <div><strong>Email</strong><br><a href="mailto:aryaenterprise28@gmail.com">aryaenterprise28@gmail.com</a></div></div>
-          <div style="margin-top:16px; background:#f3efe8; padding:10px 16px; border-radius:40px; display:inline-block; font-size:0.85rem;">
-            <i class="fas fa-lock" style="color:var(--gold);"></i> 100% private & secure
-          </div>
-        </div>
-        <div class="inquiry-form">
-          <h3>Send inquiry</h3>
-          <p class="form-sub">We'll reply via WhatsApp within minutes</p>
-          <form id="whatsappForm" action="#" method="GET">
-            <div class="form-row">
-              <div><label>Full name *</label><input type="text" id="waName" placeholder="Rajesh Mehta" required></div>
-              <div><label>Email *</label><input type="email" id="waEmail" placeholder="you@example.com" required></div>
-            </div>
-            <label>Phone (with country code) *</label>
-            <input type="tel" id="waPhone" placeholder="+91 8980150550" value="+91 " required>
-            <label>Diamond interest</label>
-            <select id="waInterest">
-              <option>White loose (certified)</option>
-              <option>Fancy Yellow (certified)</option>
-              <option>Pink / Blue (certified)</option>
-              <option>White loose (non-certified)</option>
-              <option>Certified pairs</option>
-              <option>Melee / bulk</option>
-              <option>Other</option>
-            </select>
-            <label>Message / specification</label>
-            <textarea id="waMessage" placeholder="Carat, colour, clarity, shape, budget..."></textarea>
-            <button type="submit" class="btn-gold">
-              <i class="fab fa-whatsapp"></i> Send inquiry on WhatsApp
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+  <div>
+    <strong>02</strong>
+    <span>Loose & certified options</span>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="logo">ARYA<span>DIAMOND</span> HOUSE</div>
-        <p>Loose & certified diamonds since 2012. Trust, transparency & quality.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  <div>
+    <strong>03</strong>
+    <span>Personal enquiry assistance</span>
+  </div>
+
+  <div>
+    <strong>04</strong>
+    <span>Direct WhatsApp contact</span>
+  </div>
+
+</section>
+
+
+
+<!-- DIAMONDS -->
+<section class="section" id="diamonds">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      OUR DIAMOND RANGE
+    </span>
+
+    <h2>
+      Find the diamond that fits your vision.
+    </h2>
+
+    <p>
+      Whether you are looking for a classic white diamond
+      or a distinctive color diamond, tell us what you need
+      and our team can assist with suitable options.
+    </p>
+
+  </div>
+
+
+  <div class="product-grid">
+
+
+    <!-- PRODUCT 1 -->
+    <article class="product-card">
+
+      <div class="product-art white-art">
+        <span>◇</span>
+      </div>
+
+      <div class="product-body">
+
+        <span class="tag">
+          WHITE
+        </span>
+
+        <h3>
+          White Loose Diamonds
+        </h3>
+
+        <p>
+          Elegant lab diamonds for jewellery,
+          custom designs and professional sourcing.
+        </p>
+
+        <a
+          href="#contact"
+          class="text-link"
+          data-product="White Loose Diamond">
+
+          Enquire Now →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCT 2 -->
+    <article class="product-card">
+
+      <div class="product-art color-art">
+        <span>◆</span>
+      </div>
+
+      <div class="product-body">
+
+        <span class="tag">
+          COLOR
+        </span>
+
+        <h3>
+          Color Loose Diamonds
+        </h3>
+
+        <p>
+          Distinctive color diamonds for customers
+          looking for something memorable and unique.
+        </p>
+
+        <a
+          href="#contact"
+          class="text-link"
+          data-product="Color Loose Diamond">
+
+          Enquire Now →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCT 3 -->
+    <article class="product-card">
+
+      <div class="product-art cert-art">
+        <span>✦</span>
+      </div>
+
+      <div class="product-body">
+
+        <span class="tag">
+          CERTIFIED
+        </span>
+
+        <h3>
+          White Certified Diamonds
+        </h3>
+
+        <p>
+          Certified diamond options with documented
+          specifications available during enquiry.
+        </p>
+
+        <a
+          href="#contact"
+          class="text-link"
+          data-product="White Certified Diamond">
+
+          Enquire Now →
+
+        </a>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCT 4 -->
+    <article class="product-card">
+
+      <div class="product-art fancy-art">
+        <span>◆</span>
+      </div>
+
+      <div class="product-body">
+
+        <span class="tag">
+          COLOR • CERTIFIED
+        </span>
+
+        <h3>
+          Color Certified Diamonds
+        </h3>
+
+        <p>
+          Certified color diamond options with
+          specifications shared during enquiry.
+        </p>
+
+        <a
+          href="#contact"
+          class="text-link"
+          data-product="Color Certified Diamond">
+
+          Enquire Now →
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- CERTIFICATION -->
+<section class="dark-section" id="certification">
+
+
+  <div class="cert-visual">
+
+    <div class="certificate-card">
+
+      <span>✦</span>
+
+      <strong>
+        CERTIFIED
+      </strong>
+
+      <small>
+        DIAMOND DOCUMENTATION
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div class="cert-copy">
+
+    <span class="eyebrow">
+      BUY WITH CLARITY
+    </span>
+
+    <h2>
+      Specifications matter.
+      So does trust.
+    </h2>
+
+    <p>
+      For certified diamonds, ask us for the available
+      grading report and diamond specifications before
+      purchase. We help you understand the stone you
+      are considering.
+    </p>
+
+
+    <div class="check-list">
+
+
+      <div>
+
+        <b>✓</b>
+
+        <span>
+
+          <strong>
+            Clear Specifications
+          </strong>
+
+          <small>
+            Discuss the diamond's key characteristics
+            before buying.
+          </small>
+
+        </span>
+
+      </div>
+
+
+
+      <div>
+
+        <b>✓</b>
+
+        <span>
+
+          <strong>
+            Certificate Details
+          </strong>
+
+          <small>
+            Request available certification information
+            for certified stones.
+          </small>
+
+        </span>
+
+      </div>
+
+
+
+      <div>
+
+        <b>✓</b>
+
+        <span>
+
+          <strong>
+            Personal Assistance
+          </strong>
+
+          <small>
+            Contact us directly for sourcing
+            and purchase enquiries.
+          </small>
+
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      WHY ARYA DIAMOND HOUSE
+    </span>
+
+    <h2>
+      A professional way to source your diamond.
+    </h2>
+
+  </div>
+
+
+  <div class="values-grid">
+
+
+    <div class="value">
+
+      <span>01</span>
+
+      <h3>
+        Quality First
+      </h3>
+
+      <p>
+        We focus on helping you identify diamond
+        options that match your requirements.
+      </p>
+
+    </div>
+
+
+
+    <div class="value">
+
+      <span>02</span>
+
+      <h3>
+        Transparent Enquiry
+      </h3>
+
+      <p>
+        Share your preferred shape, size, color,
+        clarity and certification requirements.
+      </p>
+
+    </div>
+
+
+
+    <div class="value">
+
+      <span>03</span>
+
+      <h3>
+        Direct Communication
+      </h3>
+
+      <p>
+        Speak with us directly by phone, email
+        or WhatsApp about your requirement.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+<section class="cta-section">
+
+  <div>
+
+    <span class="eyebrow">
+      READY TO SOURCE?
+    </span>
+
+    <h2>
+      Tell us the diamond you are looking for.
+    </h2>
+
+    <p>
+      Get in touch for availability, specifications
+      and a purchase enquiry.
+    </p>
+
+  </div>
+
+
+  <a href="#contact" class="btn btn-primary">
+    Start Your Enquiry →
+  </a>
+
+</section>
+
+
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+
+  <div class="contact-info">
+
+    <span class="eyebrow">
+      CONTACT ARYA DIAMOND HOUSE
+    </span>
+
+    <h2>
+      Let's discuss your diamond requirement.
+    </h2>
+
+    <p>
+      Send us your requirement and our team can
+      respond with relevant information and
+      available options.
+    </p>
+
+
+    <div class="contact-list">
+
+
+      <!-- PHONE -->
+      <a href="tel:+918980150550">
+
+        <span>☎</span>
+
+        <div>
+
+          <small>CALL</small>
+
+          <strong>
+            +91 8980150550
+          </strong>
+
         </div>
-      </div>
-      <div class="footer-links">
-        <h4>Diamonds</h4>
-        <a href="#">White loose</a>
-        <a href="#">Fancy colour</a>
-        <a href="#">Certified</a>
-        <a href="#">Melee</a>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <a href="tel:+918980150550"><i class="fas fa-phone-alt"></i> +91 8980150550</a>
-        <a href="https://wa.me/916352925472" target="_blank"><i class="fab fa-whatsapp"></i> +91 6352925472</a>
-        <a href="mailto:aryaenterprise28@gmail.com"><i class="fas fa-envelope"></i> aryaenterprise28@gmail.com</a>
-      </div>
+
+      </a>
+
+
+
+      <!-- WHATSAPP -->
+      <a
+        href="https://wa.me/916352925472"
+        target="_blank">
+
+        <span>◉</span>
+
+        <div>
+
+          <small>WHATSAPP</small>
+
+          <strong>
+            +91 6352925472
+          </strong>
+
+        </div>
+
+      </a>
+
+
+
+      <!-- EMAIL -->
+      <a href="mailto:aryaenterprise28@gmail.com">
+
+        <span>✉</span>
+
+        <div>
+
+          <small>EMAIL</small>
+
+          <strong>
+            aryaenterprise28@gmail.com
+          </strong>
+
+        </div>
+
+      </a>
+
+
     </div>
-    <div class="container footer-bottom">
-      <span>© 2026 ARYA DIAMOND HOUSE · All rights reserved · Made with <i class="fas fa-gem" style="color:var(--gold);"></i></span>
+
+  </div>
+
+
+
+  <!-- ENQUIRY FORM -->
+  <form class="enquiry-form" id="enquiryForm">
+
+    <h3>
+      Diamond Enquiry
+    </h3>
+
+    <p>
+      Tell us what you need.
+    </p>
+
+
+    <label>
+
+      Name
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Your name"
+        required>
+
+    </label>
+
+
+
+    <label>
+
+      Phone / WhatsApp
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="+91"
+        required>
+
+    </label>
+
+
+
+    <label>
+
+      Diamond Requirement
+
+      <select id="requirement">
+
+        <option>
+          White Loose Diamond
+        </option>
+
+        <option>
+          Color Loose Diamond
+        </option>
+
+        <option>
+          White Certified Diamond
+        </option>
+
+        <option>
+          Color Certified Diamond
+        </option>
+
+        <option>
+          Not sure — help me choose
+        </option>
+
+      </select>
+
+    </label>
+
+
+
+    <label>
+
+      Message
+
+      <textarea
+        id="message"
+        rows="4"
+        placeholder="Shape, carat, color, clarity, certification, quantity, etc.">
+      </textarea>
+
+    </label>
+
+
+
+    <button
+      class="btn btn-primary full"
+      type="submit">
+
+      Send Enquiry on WhatsApp →
+
+    </button>
+
+
+    <small class="form-note">
+      Your enquiry will open in WhatsApp with your
+      details filled in.
+    </small>
+
+  </form>
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-brand">
+
+    <span class="brand-mark">
+      A
+    </span>
+
+    <div>
+
+      <strong>
+        ARYA DIAMOND HOUSE
+      </strong>
+
+      <small>
+        Lab & Certified Diamonds
+      </small>
+
     </div>
-  </footer>
 
-  <!-- Mobile Menu Toggle -->
-  <script>
-    (function() {
-      const toggle = document.getElementById('menuToggle');
-      const nav = document.getElementById('navLinks');
-      if (toggle && nav) {
-        toggle.addEventListener('click', function() {
-          nav.classList.toggle('open');
-          const icon = toggle.querySelector('i');
-          if (icon) {
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-          }
-        });
-        // Close menu when a link is clicked
-        nav.querySelectorAll('a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            nav.classList.remove('open');
-            const icon = toggle.querySelector('i');
-            if (icon) {
-              icon.classList.add('fa-bars');
-              icon.classList.remove('fa-times');
-            }
-          });
-        });
-      }
-    })();
-  </script>
+  </div>
 
-  <!-- WhatsApp redirect logic -->
-  <script>
-    (function() {
-      const form = document.getElementById('whatsappForm');
-      if (!form) return;
 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
+  <div class="footer-links">
 
-        const name = document.getElementById('waName')?.value.trim() || '';
-        const email = document.getElementById('waEmail')?.value.trim() || '';
-        const phone = document.getElementById('waPhone')?.value.trim() || '';
-        const interest = document.getElementById('waInterest')?.value || '';
-        const message = document.getElementById('waMessage')?.value.trim() || '';
+    <a href="#diamonds">Diamonds</a>
 
-        let waText = 'Hello ARYA DIAMOND HOUSE, I would like to inquire about diamonds.';
-        waText += '\n\n📌 *Inquiry Details:*';
-        if (name) waText += `\n👤 Name: ${name}`;
-        if (email) waText += `\n📧 Email: ${email}`;
-        if (phone) waText += `\n📱 Phone: ${phone}`;
-        if (interest) waText += `\n💎 Interest: ${interest}`;
-        if (message) waText += `\n📝 Message: ${message}`;
-        waText += '\n\n— Sent from ARYA DIAMOND HOUSE website';
+    <a href="#certification">
+      Certification
+    </a>
 
-        const encoded = encodeURIComponent(waText);
-        const waNumber = '916352925472';
+    <a href="#about">
+      About
+    </a>
 
-        window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
-      });
-    })();
-  </script>
+    <a href="#contact">
+      Contact
+    </a>
+
+  </div>
+
+
+  <p>
+    © <span id="year"></span>
+    ARYA DIAMOND HOUSE.
+    All rights reserved.
+  </p>
+
+</footer>
+
+
+
+<!-- FLOATING WHATSAPP -->
+<a
+  class="floating-whatsapp"
+  href="https://wa.me/916352925472?text=Hello%20ARYA%20DIAMOND%20HOUSE%2C%20I%20would%20like%20to%20enquire%20about%20diamonds."
+  target="_blank"
+  aria-label="WhatsApp">
+
+  ◉
+
+</a>
+
+
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
