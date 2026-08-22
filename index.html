@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ARYA DIAMOND HOUSE · loose & certified diamonds</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <style>
+    /* ----- RESET & VARIABLES ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f0d080;
+      --gold-dark: #b8960f;
+      --gold-glow: rgba(212, 175, 55, 0.3);
+      --deep-navy: #0a0e1a;
+      --charcoal: #141b2d;
+      --soft-white: #f8f6f1;
+      --gray-light: #e8e4dc;
+      --shadow: 0 20px 60px rgba(0,0,0,0.3);
+      --radius: 20px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep-navy);
+      color: #e8e4dc;
+      line-height: 1.6;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    @media (min-width: 768px) {
+      .container { padding: 0 32px; }
+    }
+
+    /* ----- ANIMATIONS ----- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--gold-glow); }
+      50% { box-shadow: 0 0 40px var(--gold-glow), 0 0 60px rgba(212, 175, 55, 0.1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes sparkle {
+      0% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.3; transform: scale(0.8); }
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ----- BUTTONS & BADGES ----- */
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--deep-navy);
+      font-weight: 800;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 60px;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+      transition: var(--transition);
+      cursor: pointer;
+      width: 100%;
+      min-height: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.6s;
+    }
+    .btn-gold:hover::before {
+      left: 100%;
+    }
+    @media (min-width: 480px) {
+      .btn-gold { width: auto; padding: 16px 40px; }
+    }
+    .btn-gold i { font-size: 1.2rem; }
+    .btn-gold:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5);
+      color: var(--deep-navy);
+    }
+    .btn-gold:active { transform: scale(0.97); }
+    .btn-outline-gold {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 60px;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-outline-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+      transition: 0.6s;
+    }
+    .btn-outline-gold:hover::before {
+      left: 100%;
+    }
+    @media (min-width: 480px) {
+      .btn-outline-gold { width: auto; padding: 14px 32px; }
+    }
+    .btn-outline-gold:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.15);
+    }
+    .btn-outline-gold:active { transform: scale(0.97); }
+    .badge-cert {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 40px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: inline-block;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    @media (min-width: 768px) {
+      .badge-cert { font-size: 0.75rem; padding: 8px 20px; }
+    }
+
+    /* ----- HEADER / NAV ----- */
+    .header {
+      background: rgba(10, 14, 26, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: white;
+      line-height: 1.1;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo span { 
+      -webkit-text-fill-color: white;
+      background: none;
+      font-weight: 300;
+    }
+    .logo small {
+      font-size: 0.5rem;
+      font-weight: 400;
+      display: block;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1.5px;
+      margin-top: -2px;
+      -webkit-text-fill-color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+    @media (min-width: 480px) {
+      .logo { font-size: 1.7rem; }
+      .logo small { font-size: 0.55rem; }
+    }
+    @media (min-width: 768px) {
+      .logo { font-size: 2rem; }
+      .logo small { font-size: 0.6rem; }
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0 12px;
+      gap: 14px;
+      align-items: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.08);
+      margin-top: 12px;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      transition: var(--transition);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 8px 0;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 60%;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        gap: 32px;
+        border-top: none;
+        margin-top: 0;
+      }
+      .nav-links a { width: auto; font-size: 0.95rem; padding: 4px 0; }
+    }
+    .nav-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+    @media (min-width: 480px) { .nav-contact { gap: 14px; } }
+    .nav-contact .whatsapp-icon {
+      background: #25d366;
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+    @media (min-width: 480px) {
+      .nav-contact .whatsapp-icon { width: 42px; height: 42px; font-size: 1.3rem; }
+    }
+    .nav-contact .whatsapp-icon:hover {
+      transform: scale(1.1) rotate(-5deg);
+      background: #1da851;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+    }
+    .nav-contact .whatsapp-icon:active { transform: scale(0.92); }
+    .nav-contact .phone-link {
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: none;
+      color: rgba(255,255,255,0.8);
+    }
+    @media (min-width: 480px) {
+      .nav-contact .phone-link { display: inline; font-size: 0.85rem; }
+    }
+    @media (min-width: 768px) {
+      .nav-contact .phone-link { font-size: 0.95rem; }
+    }
+    .nav-contact .phone-link i { color: var(--gold); margin-right: 6px; }
+    .mobile-menu-toggle {
+      display: block;
+      font-size: 1.6rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 8px;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .mobile-menu-toggle:hover { color: var(--gold); }
+    @media (min-width: 768px) { .mobile-menu-toggle { display: none; } }
+
+    /* ----- HERO SECTION ----- */
+    .hero {
+      padding: 40px 0 30px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%),
+                  var(--deep-navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '✦';
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      font-size: 4rem;
+      color: rgba(212, 175, 55, 0.05);
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero::after {
+      content: '◆';
+      position: absolute;
+      bottom: 15%;
+      right: 8%;
+      font-size: 5rem;
+      color: rgba(212, 175, 55, 0.04);
+      animation: float 8s ease-in-out infinite reverse;
+    }
+    @media (min-width: 768px) {
+      .hero { padding: 80px 0 50px; }
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    @media (min-width: 768px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: 50px; } }
+    .hero-content h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+    @media (min-width: 480px) { .hero-content h1 { font-size: 3rem; } }
+    @media (min-width: 768px) { .hero-content h1 { font-size: 4rem; } }
+    .hero-content h1 .highlight {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    .hero-content p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin: 18px 0 28px;
+      max-width: 100%;
+      line-height: 1.8;
+    }
+    @media (min-width: 768px) {
+      .hero-content p { font-size: 1.15rem; margin: 24px 0 36px; max-width: 480px; }
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin: 18px 0 28px;
+    }
+    @media (min-width: 480px) { .hero-badges { gap: 16px 24px; margin: 24px 0 32px; } }
+    .hero-badges span {
+      background: rgba(255,255,255,0.05);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(4px);
+    }
+    @media (min-width: 480px) { .hero-badges span { font-size: 0.9rem; padding: 10px 24px; } }
+    @media (min-width: 768px) { .hero-badges span { font-size: 0.95rem; } }
+    .hero-badges i { color: var(--gold); }
+    .hero-image {
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.06), transparent 70%);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.08);
+      backdrop-filter: blur(4px);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    @media (min-width: 768px) { .hero-image { padding: 30px; } }
+    .hero-image .diamond-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+    @media (min-width: 480px) { .hero-image .diamond-display { gap: 30px; } }
+    .hero-image .diamond-display svg {
+      width: 70px;
+      height: 80px;
+      filter: drop-shadow(0 8px 25px rgba(212, 175, 55, 0.2));
+      transition: var(--transition);
+    }
+    .hero-image .diamond-display svg:hover {
+      transform: scale(1.08) rotate(-5deg);
+      filter: drop-shadow(0 12px 35px rgba(212, 175, 55, 0.3));
+    }
+    @media (min-width: 480px) {
+      .hero-image .diamond-display svg { width: 90px; height: 103px; }
+    }
+    @media (min-width: 768px) {
+      .hero-image .diamond-display svg { width: 110px; height: 126px; }
+    }
+    .hero-image .diamond-label {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-top: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    @media (min-width: 480px) { .hero-image .diamond-label { font-size: 0.95rem; } }
+
+    /* ----- TRUST BAR ----- */
+    .trust-bar {
+      background: rgba(255,255,255,0.02);
+      padding: 20px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.06);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.06);
+      margin: 6px 0 30px;
+      backdrop-filter: blur(4px);
+    }
+    @media (min-width: 768px) { .trust-bar { padding: 32px 0; margin: 10px 0 50px; } }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 20px;
+    }
+    @media (min-width: 480px) { .trust-grid { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; } }
+    @media (min-width: 768px) { .trust-grid { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px; } }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+    }
+    @media (min-width: 480px) { .trust-item { font-size: 0.9rem; gap: 14px; } }
+    @media (min-width: 768px) { .trust-item { font-size: 1rem; } }
+    .trust-item i {
+      font-size: 1.6rem;
+      color: var(--gold);
+      width: 32px;
+      flex-shrink: 0;
+    }
+    @media (min-width: 480px) { .trust-item i { font-size: 1.8rem; width: 36px; } }
+    @media (min-width: 768px) { .trust-item i { font-size: 2rem; width: 40px; } }
+
+    /* ----- DIAMOND COLLECTIONS (cards) ----- */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: white;
+      background: linear-gradient(135deg, white, rgba(255,255,255,0.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @media (min-width: 480px) { .section-title { font-size: 2.4rem; } }
+    @media (min-width: 768px) { .section-title { font-size: 2.8rem; margin-bottom: 12px; } }
+    .section-sub {
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    @media (min-width: 768px) { .section-sub { font-size: 1.1rem; margin-bottom: 48px; } }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 480px) { .card-grid { gap: 24px; } }
+    @media (min-width: 640px) { .card-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; } }
+    @media (min-width: 768px) { .card-grid { gap: 35px; margin-bottom: 60px; } }
+    .diamond-card {
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+      padding: 24px 16px 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+      text-align: center;
+      backdrop-filter: blur(4px);
+      position: relative;
+      overflow: hidden;
+    }
+    .diamond-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.05), transparent 70%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .diamond-card:hover::before {
+      opacity: 1;
+    }
+    .diamond-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.05);
+    }
+    @media (min-width: 768px) {
+      .diamond-card { padding: 32px 24px 28px; }
+      .diamond-card:hover { transform: translateY(-12px); }
+    }
+    .diamond-card .diamond-icon {
+      width: 70px;
+      height: 80px;
+      margin: 0 auto 14px;
+      display: block;
+      filter: drop-shadow(0 6px 20px rgba(212, 175, 55, 0.15));
+      transition: var(--transition);
+    }
+    .diamond-card:hover .diamond-icon {
+      transform: scale(1.05) rotate(-3deg);
+      filter: drop-shadow(0 8px 30px rgba(212, 175, 55, 0.25));
+    }
+    @media (min-width: 480px) {
+      .diamond-card .diamond-icon { width: 80px; height: 92px; }
+    }
+    @media (min-width: 768px) {
+      .diamond-card .diamond-icon { width: 90px; height: 103px; margin-bottom: 18px; }
+    }
+    .diamond-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      color: white;
+      font-weight: 700;
+    }
+    @media (min-width: 480px) { .diamond-card h3 { font-size: 1.25rem; } }
+    @media (min-width: 768px) { .diamond-card h3 { font-size: 1.4rem; margin-bottom: 6px; } }
+    .diamond-card .price-tag {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1rem;
+      margin: 6px 0 4px;
+    }
+    @media (min-width: 768px) { .diamond-card .price-tag { font-size: 1.2rem; margin: 10px 0 6px; } }
+    .diamond-card .badge-cert { margin: 8px 0 10px; }
+    @media (min-width: 768px) { .diamond-card .badge-cert { margin: 12px 0 16px; } }
+    .diamond-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+    @media (min-width: 768px) { .diamond-card p { font-size: 0.9rem; } }
+
+    /* ----- CERTIFIED SECTION (standout) ----- */
+    .certified-section {
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.06), transparent 70%);
+      padding: 36px 16px;
+      border-radius: var(--radius);
+      margin: 28px 0 24px;
+      border: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    @media (min-width: 480px) { .certified-section { padding: 48px 28px; } }
+    @media (min-width: 768px) { .certified-section { padding: 70px 50px; margin: 50px 0 30px; } }
+    .certified-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    @media (min-width: 768px) { .certified-grid { grid-template-columns: 1fr 1fr; gap: 50px; } }
+    .certified-content .badge-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--deep-navy);
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    @media (min-width: 768px) {
+      .certified-content .badge-gold { padding: 8px 24px; font-size: 0.85rem; margin-bottom: 12px; }
+    }
+    .certified-content h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: white;
+      line-height: 1.2;
+    }
+    @media (min-width: 480px) { .certified-content h2 { font-size: 2.2rem; } }
+    @media (min-width: 768px) { .certified-content h2 { font-size: 2.6rem; } }
+    .certified-content ul {
+      list-style: none;
+      margin: 18px 0 24px;
+    }
+    @media (min-width: 768px) { .certified-content ul { margin: 24px 0 32px; } }
+    .certified-content ul li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+    @media (min-width: 768px) { .certified-content ul li { padding: 10px 0; gap: 14px; font-size: 1rem; } }
+    .certified-content ul li i {
+      color: var(--gold);
+      font-size: 1.1rem;
+      width: 22px;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) { .certified-content ul li i { font-size: 1.3rem; width: 26px; } }
+    .certified-image {
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.04), transparent 70%);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    @media (min-width: 480px) { .certified-image { padding: 30px 24px; min-height: 170px; } }
+    @media (min-width: 768px) { .certified-image { min-height: 200px; padding: 30px; } }
+    .certified-image .diamond-showcase {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 480px) { .certified-image .diamond-showcase { gap: 24px; } }
+    @media (min-width: 768px) { .certified-image .diamond-showcase { gap: 30px; } }
+    .certified-image .diamond-showcase svg {
+      width: 55px;
+      height: 63px;
+      filter: drop-shadow(0 6px 20px rgba(212, 175, 55, 0.12));
+      transition: var(--transition);
+    }
+    .certified-image .diamond-showcase svg:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 8px 30px rgba(212, 175, 55, 0.2));
+    }
+    @media (min-width: 480px) {
+      .certified-image .diamond-showcase svg { width: 65px; height: 75px; }
+    }
+    @media (min-width: 768px) {
+      .certified-image .diamond-showcase svg { width: 80px; height: 92px; }
+    }
+    .certified-image .label {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    @media (min-width: 768px) { .certified-image .label { font-size: 0.9rem; } }
+
+    /* ----- INQUIRY / CONTACT SECTION ----- */
+    .inquiry-section {
+      background: rgba(255,255,255,0.02);
+      padding: 32px 16px;
+      border-radius: var(--radius);
+      margin: 28px 0;
+      border: 1px solid rgba(212, 175, 55, 0.06);
+      backdrop-filter: blur(4px);
+    }
+    @media (min-width: 480px) { .inquiry-section { padding: 40px 24px; } }
+    @media (min-width: 768px) { .inquiry-section { padding: 60px 50px; margin: 50px 0; } }
+    .inquiry-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    @media (min-width: 768px) { .inquiry-grid { grid-template-columns: 1fr 1.2fr; gap: 50px; } }
+    .inquiry-info h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: white;
+    }
+    @media (min-width: 480px) { .inquiry-info h2 { font-size: 2.2rem; } }
+    @media (min-width: 768px) { .inquiry-info h2 { font-size: 2.5rem; } }
+    .inquiry-info h2 span { color: var(--gold); }
+    .inquiry-info p {
+      color: rgba(255,255,255,0.6);
+      margin: 14px 0 20px;
+      font-size: 0.95rem;
+    }
+    @media (min-width: 768px) { .inquiry-info p { margin: 18px 0 28px; font-size: 1rem; } }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+    @media (min-width: 768px) { .contact-detail { gap: 18px; padding: 14px 0; font-size: 1rem; } }
+    .contact-detail i {
+      width: 26px;
+      color: var(--gold);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) { .contact-detail i { width: 30px; font-size: 1.4rem; } }
+    .contact-detail strong { font-weight: 600; color: white; }
+    .contact-detail a { color: rgba(255,255,255,0.7); transition: var(--transition); }
+    .contact-detail a:hover { color: var(--gold); }
+    .inquiry-form {
+      background: rgba(255,255,255,0.03);
+      padding: 24px 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    @media (min-width: 480px) { .inquiry-form { padding: 28px 24px; } }
+    @media (min-width: 768px) { .inquiry-form { padding: 36px 32px; } }
+    .inquiry-form h3 {
+      font-weight: 800;
+      margin-bottom: 4px;
+      font-size: 1.3rem;
+      color: white;
+    }
+    @media (min-width: 768px) { .inquiry-form h3 { font-size: 1.5rem; margin-bottom: 8px; } }
+    .inquiry-form .form-sub {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 768px) { .inquiry-form .form-sub { font-size: 0.95rem; margin-bottom: 20px; } }
+    .inquiry-form label {
+      font-weight: 600;
+      display: block;
+      margin: 14px 0 6px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+    }
+    @media (min-width: 768px) { .inquiry-form label { margin: 18px 0 6px; font-size: 0.95rem; } }
+    .inquiry-form input,
+    .inquiry-form textarea,
+    .inquiry-form select {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.04);
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      color: white;
+      -webkit-appearance: none;
+    }
+    .inquiry-form input::placeholder,
+    .inquiry-form textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .inquiry-form select option {
+      background: var(--deep-navy);
+      color: white;
+    }
+    @media (min-width: 768px) {
+      .inquiry-form input,
+      .inquiry-form textarea,
+      .inquiry-form select { padding: 16px 22px; font-size: 0.95rem; }
+    }
+    .inquiry-form input:focus,
+    .inquiry-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+      background: rgba(255,255,255,0.06);
+    }
+    .inquiry-form textarea {
+      border-radius: 20px;
+      min-height: 90px;
+      resize: vertical;
+    }
+    @media (min-width: 768px) { .inquiry-form textarea { min-height: 120px; } }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media (min-width: 480px) { .form-row { grid-template-columns: 1fr 1fr; gap: 16px; } }
+    @media (min-width: 768px) { .form-row { gap: 20px; } }
+    .inquiry-form .btn-gold { margin-top: 16px; }
+    @media (min-width: 768px) { .inquiry-form .btn-gold { margin-top: 20px; } }
+
+    /* ----- FOOTER ----- */
+    .footer {
+      background: rgba(0,0,0,0.3);
+      color: rgba(255,255,255,0.6);
+      padding: 32px 0 20px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.06);
+    }
+    @media (min-width: 768px) { .footer { padding: 50px 0 30px; margin-top: 50px; } }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    @media (min-width: 480px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 50px; } }
+    .footer-brand .logo {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @media (min-width: 768px) { .footer-brand .logo { font-size: 2rem; } }
+    .footer-brand .logo span {
+      -webkit-text-fill-color: rgba(255,255,255,0.5);
+      background: none;
+    }
+    .footer-brand p {
+      margin: 12px 0 18px;
+      max-width: 100%;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+    }
+    @media (min-width: 768px) {
+      .footer-brand p { margin: 16px 0 24px; max-width: 320px; font-size: 1rem; }
+    }
+    .footer-social a {
+      background: rgba(255,255,255,0.04);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      margin-right: 8px;
+      transition: var(--transition);
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    @media (min-width: 768px) {
+      .footer-social a { width: 48px; height: 48px; margin-right: 10px; font-size: 1.1rem; }
+    }
+    .footer-social a:hover {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      border-color: rgba(212, 175, 55, 0.2);
+      transform: translateY(-3px);
+    }
+    .footer-social a:active { transform: scale(0.92); }
+    .footer-links h4 {
+      color: white;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    @media (min-width: 768px) { .footer-links h4 { margin-bottom: 18px; font-size: 1.1rem; } }
+    .footer-links a {
+      display: block;
+      padding: 5px 0;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    @media (min-width: 768px) { .footer-links a { padding: 6px 0; font-size: 0.95rem; } }
+    .footer-links a:hover { color: var(--gold); padding-left: 4px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 18px;
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+    @media (min-width: 768px) {
+      .footer-bottom { padding-top: 24px; margin-top: 32px; font-size: 0.85rem; }
+    }
+    .footer-bottom i { color: var(--gold); }
+
+    /* ----- SCROLL ANIMATION TRIGGER ----- */
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        ARYA<span>DIAMOND</span> HOUSE
+        <small>loose · certified · since 2012</small>
+      </div>
+      <div class="nav-contact">
+        <a href="https://wa.me/916352925472" target="_blank" class="whatsapp-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+918980150550" class="phone-link"><i class="fas fa-phone-alt"></i> +91 8980150550</a>
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#" class="active">Home</a>
+        <a href="#diamonds">Diamonds</a>
+        <a href="#certified">Certified</a>
+        <a href="#inquiry">Inquiry</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content animate-on-scroll">
+        <span class="badge-cert"><i class="fas fa-gem"></i> wholesale & retail</span>
+        <h1>White & Color <br><span class="highlight">Loose Diamonds</span> <br>with Certification</h1>
+        <p>Ethically sourced, GIA/IGI certified stones. Trusted by jewellers and collectors worldwide.</p>
+        <div class="hero-badges">
+          <span><i class="fas fa-check-circle"></i> 100% natural</span>
+          <span><i class="fas fa-certificate"></i> certified</span>
+          <span><i class="fas fa-globe"></i> shipped worldwide</span>
+        </div>
+        <a href="#inquiry" class="btn-gold"><i class="fas fa-paper-plane"></i> Request a quote</a>
+      </div>
+      <div class="hero-image animate-on-scroll">
+        <div class="diamond-display">
+          <!-- White Diamond -->
+          <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <polygon points="50,5 50,55 95,40" fill="rgba(255,255,255,0.8)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <polygon points="50,5 50,55 5,40" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <polygon points="50,55 95,40 80,105" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <polygon points="50,55 5,40 20,105" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 80,105" fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 20,105" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+            <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,255,0.4)" transform="rotate(-20,50,50)"/>
+          </svg>
+          <!-- Yellow Diamond -->
+          <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f7e05e" stroke="#d4b82a" stroke-width="1.5"/>
+            <polygon points="50,5 50,55 95,40" fill="#f5da4a" stroke="#d4b82a" stroke-width="0.5"/>
+            <polygon points="50,5 50,55 5,40" fill="#e8cc3a" stroke="#d4b82a" stroke-width="0.5"/>
+            <polygon points="50,55 95,40 80,105" fill="#f0d44a" stroke="#d4b82a" stroke-width="0.5"/>
+            <polygon points="50,55 5,40 20,105" fill="#dcc03a" stroke="#d4b82a" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 80,105" fill="#d4b82a" stroke="#d4b82a" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 20,105" fill="#c4a82a" stroke="#d4b82a" stroke-width="0.5"/>
+            <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,200,0.4)" transform="rotate(-20,50,50)"/>
+          </svg>
+          <!-- Pink Diamond -->
+          <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f5a0b8" stroke="#d47a94" stroke-width="1.5"/>
+            <polygon points="50,5 50,55 95,40" fill="#f08aa8" stroke="#d47a94" stroke-width="0.5"/>
+            <polygon points="50,5 50,55 5,40" fill="#e07a98" stroke="#d47a94" stroke-width="0.5"/>
+            <polygon points="50,55 95,40 80,105" fill="#e8849e" stroke="#d47a94" stroke-width="0.5"/>
+            <polygon points="50,55 5,40 20,105" fill="#d4708a" stroke="#d47a94" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 80,105" fill="#c8607a" stroke="#d47a94" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 20,105" fill="#b8506a" stroke="#d47a94" stroke-width="0.5"/>
+            <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,200,210,0.4)" transform="rotate(-20,50,50)"/>
+          </svg>
+          <!-- Blue Diamond -->
+          <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#7fb5d9" stroke="#4a8abf" stroke-width="1.5"/>
+            <polygon points="50,5 50,55 95,40" fill="#6aa8d0" stroke="#4a8abf" stroke-width="0.5"/>
+            <polygon points="50,5 50,55 5,40" fill="#5a9ac4" stroke="#4a8abf" stroke-width="0.5"/>
+            <polygon points="50,55 95,40 80,105" fill="#5e96be" stroke="#4a8abf" stroke-width="0.5"/>
+            <polygon points="50,55 5,40 20,105" fill="#4a86b2" stroke="#4a8abf" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 80,105" fill="#3a78a6" stroke="#4a8abf" stroke-width="0.5"/>
+            <polygon points="50,55 50,110 20,105" fill="#2a689a" stroke="#4a8abf" stroke-width="0.5"/>
+            <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(200,230,255,0.4)" transform="rotate(-20,50,50)"/>
+          </svg>
+        </div>
+        <div class="diamond-label">White · Yellow · Pink · Blue · certified collection</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar animate-on-scroll">
+    <div class="container trust-grid">
+      <div class="trust-item"><i class="fas fa-award"></i> GIA & IGI Certified</div>
+      <div class="trust-item"><i class="fas fa-hand-holding-heart"></i> Conflict-Free</div>
+      <div class="trust-item"><i class="fas fa-truck"></i> Insured Shipping</div>
+      <div class="trust-item"><i class="fas fa-star"></i> 250+ Happy Clients</div>
+    </div>
+  </div>
+
+  <!-- DIAMOND COLLECTIONS -->
+  <div class="container" id="diamonds">
+    <div class="animate-on-scroll">
+      <h2 class="section-title">Our diamond collections</h2>
+      <p class="section-sub">White and fancy colour loose diamonds · certified & non-certified options</p>
+    </div>
+    <div class="card-grid">
+      <div class="diamond-card animate-on-scroll">
+        <svg class="diamond-icon" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <polygon points="50,5 50,55 95,40" fill="rgba(255,255,255,0.8)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="50,5 50,55 5,40" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="50,55 95,40 80,105" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="50,55 5,40 20,105" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 80,105" fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 20,105" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+          <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,255,0.4)" transform="rotate(-20,50,50)"/>
+        </svg>
+        <h3>White Loose</h3>
+        <div class="price-tag">D–Z Colour</div>
+        <span class="badge-cert">GIA / IGI</span>
+        <p>Round, princess, emerald & more.</p>
+      </div>
+      <div class="diamond-card animate-on-scroll">
+        <svg class="diamond-icon" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f7e05e" stroke="#d4b82a" stroke-width="1.5"/>
+          <polygon points="50,5 50,55 95,40" fill="#f5da4a" stroke="#d4b82a" stroke-width="0.5"/>
+          <polygon points="50,5 50,55 5,40" fill="#e8cc3a" stroke="#d4b82a" stroke-width="0.5"/>
+          <polygon points="50,55 95,40 80,105" fill="#f0d44a" stroke="#d4b82a" stroke-width="0.5"/>
+          <polygon points="50,55 5,40 20,105" fill="#dcc03a" stroke="#d4b82a" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 80,105" fill="#d4b82a" stroke="#d4b82a" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 20,105" fill="#c4a82a" stroke="#d4b82a" stroke-width="0.5"/>
+          <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,200,0.4)" transform="rotate(-20,50,50)"/>
+        </svg>
+        <h3>Fancy Yellow</h3>
+        <div class="price-tag">Vivid · Intense</div>
+        <span class="badge-cert">certified</span>
+        <p>Rare & investment-grade.</p>
+      </div>
+      <div class="diamond-card animate-on-scroll">
+        <svg class="diamond-icon" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f5a0b8" stroke="#d47a94" stroke-width="1.5"/>
+          <polygon points="50,5 50,55 95,40" fill="#f08aa8" stroke="#d47a94" stroke-width="0.5"/>
+          <polygon points="50,5 50,55 5,40" fill="#e07a98" stroke="#d47a94" stroke-width="0.5"/>
+          <polygon points="50,55 95,40 80,105" fill="#e8849e" stroke="#d47a94" stroke-width="0.5"/>
+          <polygon points="50,55 5,40 20,105" fill="#d4708a" stroke="#d47a94" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 80,105" fill="#c8607a" stroke="#d47a94" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 20,105" fill="#b8506a" stroke="#d47a94" stroke-width="0.5"/>
+          <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,200,210,0.4)" transform="rotate(-20,50,50)"/>
+        </svg>
+        <h3>Pink & Blue</h3>
+        <div class="price-tag">Fancy Colour</div>
+        <span class="badge-cert">with report</span>
+        <p>Collector's choice.</p>
+      </div>
+      <div class="diamond-card animate-on-scroll">
+        <svg class="diamond-icon" viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#7fb5d9" stroke="#4a8abf" stroke-width="1.5"/>
+          <polygon points="50,5 50,55 95,40" fill="#6aa8d0" stroke="#4a8abf" stroke-width="0.5"/>
+          <polygon points="50,5 50,55 5,40" fill="#5a9ac4" stroke="#4a8abf" stroke-width="0.5"/>
+          <polygon points="50,55 95,40 80,105" fill="#5e96be" stroke="#4a8abf" stroke-width="0.5"/>
+          <polygon points="50,55 5,40 20,105" fill="#4a86b2" stroke="#4a8abf" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 80,105" fill="#3a78a6" stroke="#4a8abf" stroke-width="0.5"/>
+          <polygon points="50,55 50,110 20,105" fill="#2a689a" stroke="#4a8abf" stroke-width="0.5"/>
+          <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(200,230,255,0.4)" transform="rotate(-20,50,50)"/>
+        </svg>
+        <h3>Certified Pairs</h3>
+        <div class="price-tag">Matching Pairs</div>
+        <span class="badge-cert">GIA certified</span>
+        <p>Perfect for earrings & sets.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFIED SECTION -->
+  <div class="container" id="certified">
+    <div class="certified-section animate-on-scroll">
+      <div class="certified-grid">
+        <div class="certified-content">
+          <div class="badge-gold"><i class="fas fa-check-circle"></i> certified diamonds</div>
+          <h2>White & Color Certified <br>with Full Report</h2>
+          <ul>
+            <li><i class="fas fa-microscope"></i> GIA, IGI & HRD certified</li>
+            <li><i class="fas fa-ruler-combined"></i> exact measurements & proportions</li>
+            <li><i class="fas fa-file-alt"></i> digital report included</li>
+            <li><i class="fas fa-shield-alt"></i> authenticity & insurance appraisal</li>
+          </ul>
+          <a href="#inquiry" class="btn-outline-gold"><i class="fas fa-file-invoice"></i> Request certified list</a>
+        </div>
+        <div class="certified-image">
+          <div class="diamond-showcase">
+            <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              <polygon points="50,5 50,55 95,40" fill="rgba(255,255,255,0.8)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <polygon points="50,5 50,55 5,40" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <polygon points="50,55 95,40 80,105" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <polygon points="50,55 5,40 20,105" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 80,105" fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 20,105" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+              <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,255,0.4)" transform="rotate(-20,50,50)"/>
+            </svg>
+            <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f7e05e" stroke="#d4b82a" stroke-width="1.5"/>
+              <polygon points="50,5 50,55 95,40" fill="#f5da4a" stroke="#d4b82a" stroke-width="0.5"/>
+              <polygon points="50,5 50,55 5,40" fill="#e8cc3a" stroke="#d4b82a" stroke-width="0.5"/>
+              <polygon points="50,55 95,40 80,105" fill="#f0d44a" stroke="#d4b82a" stroke-width="0.5"/>
+              <polygon points="50,55 5,40 20,105" fill="#dcc03a" stroke="#d4b82a" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 80,105" fill="#d4b82a" stroke="#d4b82a" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 20,105" fill="#c4a82a" stroke="#d4b82a" stroke-width="0.5"/>
+              <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,255,200,0.4)" transform="rotate(-20,50,50)"/>
+            </svg>
+            <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#f5a0b8" stroke="#d47a94" stroke-width="1.5"/>
+              <polygon points="50,5 50,55 95,40" fill="#f08aa8" stroke="#d47a94" stroke-width="0.5"/>
+              <polygon points="50,5 50,55 5,40" fill="#e07a98" stroke="#d47a94" stroke-width="0.5"/>
+              <polygon points="50,55 95,40 80,105" fill="#e8849e" stroke="#d47a94" stroke-width="0.5"/>
+              <polygon points="50,55 5,40 20,105" fill="#d4708a" stroke="#d47a94" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 80,105" fill="#c8607a" stroke="#d47a94" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 20,105" fill="#b8506a" stroke="#d47a94" stroke-width="0.5"/>
+              <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(255,200,210,0.4)" transform="rotate(-20,50,50)"/>
+            </svg>
+            <svg viewBox="0 0 100 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="50,5 95,40 80,105 50,110 20,105 5,40" fill="#7fb5d9" stroke="#4a8abf" stroke-width="1.5"/>
+              <polygon points="50,5 50,55 95,40" fill="#6aa8d0" stroke="#4a8abf" stroke-width="0.5"/>
+              <polygon points="50,5 50,55 5,40" fill="#5a9ac4" stroke="#4a8abf" stroke-width="0.5"/>
+              <polygon points="50,55 95,40 80,105" fill="#5e96be" stroke="#4a8abf" stroke-width="0.5"/>
+              <polygon points="50,55 5,40 20,105" fill="#4a86b2" stroke="#4a8abf" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 80,105" fill="#3a78a6" stroke="#4a8abf" stroke-width="0.5"/>
+              <polygon points="50,55 50,110 20,105" fill="#2a689a" stroke="#4a8abf" stroke-width="0.5"/>
+              <ellipse cx="50" cy="50" rx="15" ry="20" fill="rgba(200,230,255,0.4)" transform="rotate(-20,50,50)"/>
+            </svg>
+          </div>
+          <div class="label">White · Yellow · Pink · Blue · certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INQUIRY + CONTACT -->
+  <div class="container" id="inquiry">
+    <div class="inquiry-section animate-on-scroll">
+      <div class="inquiry-grid">
+        <div class="inquiry-info">
+          <h2>Request a Quote <br><span>or Ask Our Experts</span></h2>
+          <p>We respond within 2 hours. All inquiries are handled with strict confidentiality.</p>
+          <div class="contact-detail"><i class="fas fa-phone-alt"></i> <div><strong>Phone</strong><br><a href="tel:+918980150550">+91 8980150550</a></div></div>
+          <div class="contact-detail"><i class="fab fa-whatsapp"></i> <div><strong>WhatsApp</strong><br><a href="https://wa.me/916352925472" target="_blank">+91 6352925472</a></div></div>
+          <div class="contact-detail"><i class="fas fa-envelope"></i> <div><strong>Email</strong><br><a href="mailto:aryaenterprise28@gmail.com">aryaenterprise28@gmail.com</a></div></div>
+          <div style="margin-top:20px; background:rgba(212,175,55,0.06); padding:12px 20px; border-radius:40px; display:inline-block; font-size:0.85rem; border:1px solid rgba(212,175,55,0.08); color:rgba(255,255,255,0.6);">
+            <i class="fas fa-lock" style="color:var(--gold);"></i> 100% private & secure
+          </div>
+        </div>
+        <div class="inquiry-form">
+          <h3>Send Inquiry</h3>
+          <p class="form-sub">We'll reply via WhatsApp within minutes</p>
+          <form id="whatsappForm" action="#" method="GET">
+            <div class="form-row">
+              <div><label>Full name *</label><input type="text" id="waName" placeholder="Rajesh Mehta" required></div>
+              <div><label>Email *</label><input type="email" id="waEmail" placeholder="you@example.com" required></div>
+            </div>
+            <label>Phone (with country code) *</label>
+            <input type="tel" id="waPhone" placeholder="+91 8980150550" value="+91 " required>
+            <label>Diamond interest</label>
+            <select id="waInterest">
+              <option>White loose (certified)</option>
+              <option>Fancy Yellow (certified)</option>
+              <option>Pink / Blue (certified)</option>
+              <option>White loose (non-certified)</option>
+              <option>Certified pairs</option>
+              <option>Melee / bulk</option>
+              <option>Other</option>
+            </select>
+            <label>Message / specification</label>
+            <textarea id="waMessage" placeholder="Carat, colour, clarity, shape, budget..."></textarea>
+            <button type="submit" class="btn-gold">
+              <i class="fab fa-whatsapp"></i> Send inquiry on WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">ARYA<span>DIAMOND</span> HOUSE</div>
+        <p>Loose & certified diamonds since 2012. Trust, transparency & quality.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Diamonds</h4>
+        <a href="#">White loose</a>
+        <a href="#">Fancy colour</a>
+        <a href="#">Certified</a>
+        <a href="#">Melee</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+918980150550"><i class="fas fa-phone-alt"></i> +91 8980150550</a>
+        <a href="https://wa.me/916352925472" target="_blank"><i class="fab fa-whatsapp"></i> +91 6352925472</a>
+        <a href="mailto:aryaenterprise28@gmail.com"><i class="fas fa-envelope"></i> aryaenterprise28@gmail.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 ARYA DIAMOND HOUSE · All rights reserved · Made with <i class="fas fa-gem"></i></span>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    (function() {
+      const toggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('navLinks');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+          const icon = toggle.querySelector('i');
+          if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+          }
+        });
+        nav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            nav.classList.remove('open');
+            const icon = toggle.querySelector('i');
+            if (icon) {
+              icon.classList.add('fa-bars');
+              icon.classList.remove('fa-times');
+            }
+          });
+        });
+      }
+    })();
+  </script>
+
+  <!-- Scroll Animation Observer -->
+  <script>
+    (function() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      elements.forEach(el => observer.observe(el));
+    })();
+  </script>
+
+  <!-- WhatsApp redirect logic -->
+  <script>
+    (function() {
+      const form = document.getElementById('whatsappForm');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('waName')?.value.trim() || '';
+        const email = document.getElementById('waEmail')?.value.trim() || '';
+        const phone = document.getElementById('waPhone')?.value.trim() || '';
+        const interest = document.getElementById('waInterest')?.value || '';
+        const message = document.getElementById('waMessage')?.value.trim() || '';
+
+        let waText = 'Hello ARYA DIAMOND HOUSE, I would like to inquire about diamonds.';
+        waText += '\n\n📌 *Inquiry Details:*';
+        if (name) waText += `\n👤 Name: ${name}`;
+        if (email) waText += `\n📧 Email: ${email}`;
+        if (phone) waText += `\n📱 Phone: ${phone}`;
+        if (interest) waText += `\n💎 Interest: ${interest}`;
+        if (message) waText += `\n📝 Message: ${message}`;
+        waText += '\n\n— Sent from ARYA DIAMOND HOUSE website';
+
+        const encoded = encodeURIComponent(waText);
+        const waNumber = '916352925472';
+
+        window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>
